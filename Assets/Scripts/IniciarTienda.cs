@@ -598,7 +598,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 2,
             Puntuacion = 2,
             Observaciones = string.Empty,
-            ImageSource = "Varios/embutido",
+            ImageSource = "Varios/jamon",
             IsAndaluz = true
         });
         lista.Add(new Alimento()
@@ -606,7 +606,7 @@ public class IniciarTienda : MonoBehaviour
             ID=40,
             IDTipoAlimento = 6,
             Nombre = "Lata de atún o caballa",
-            Unidades = 2,
+            Unidades = 1,
             Puntuacion = 2,
             Observaciones = @"Presentación en bote",
             ImageSource = "Varios/conservas",

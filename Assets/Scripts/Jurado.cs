@@ -303,19 +303,19 @@ public class Jurado : MonoBehaviour
             // más o menos adecuado, ya que alguos estan pintados con una resolución más grande que otros, y si la escala
             // es la misma salen muy descompensados. Aquí las reescalo a las escalas que había usado en las tiendas para
             // cada producto. Faltan los que aún no tenemos sprite, que por defecto se están reescalando en el "else"
-            if(imageCambiar.sprite.name == "conservas_0" || imageCambiar.sprite.name == "jamon_0" || imageCambiar.sprite.name == "arandanos_0" || imageCambiar.sprite.name == "sandia_0")
+            if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "sandia" || imageCambiar.sprite.name == "azucar")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
-            else if(imageCambiar.sprite.name == "pollo_0" || imageCambiar.sprite.name == "filete_0" || imageCambiar.sprite.name == "mermelada_0" || imageCambiar.sprite.name == "miel_0" || imageCambiar.sprite.name == "azucar_0" || imageCambiar.sprite.name == "aceite de oliva_0" || imageCambiar.sprite.name == "arroz_stewart_0" || imageCambiar.sprite.name == "pasta_0" || imageCambiar.sprite.name == "croisant_0")
+            else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || imageCambiar.sprite.name == "leche" || imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || imageCambiar.sprite.name == "croisant_0")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
             } 
-            else if(imageCambiar.sprite.name == "garbanzos_0")
+            else if(imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.4f);
             }
-            else if(imageCambiar.sprite.name == "pan_0" || imageCambiar.sprite.name == "leche_0" || imageCambiar.sprite.name == "mantequilla_0" || imageCambiar.sprite.name == "queso_0" || imageCambiar.sprite.name == "yogur_0")
+            else if(imageCambiar.sprite.name == "pan_0")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
             } 

@@ -109,6 +109,7 @@ public class GeneralController : MonoBehaviour
         }
         if(OrdenInicial.numTienda == "Tienda04")
         {
+            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "!Bienvenidos a Variedades! Primer cliente, ¿Qué deseas?";
             GameObject.Find(OrdenInicial.playersOrder[3]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[0]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[1]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
