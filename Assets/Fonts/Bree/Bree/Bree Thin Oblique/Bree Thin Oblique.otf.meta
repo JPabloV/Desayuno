@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 03ac8db0c03f655409d6f0bf2d420d07
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bree
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 48256350828b9f74db51942419bc1432, type: 3}
+  - {fileID: 12800000, guid: 00eb8b60b1c2a7143b70a2d8edc625f6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
