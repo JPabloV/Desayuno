@@ -98,12 +98,12 @@ public class Concurso : MonoBehaviour
             de modo que se guardan estos tres valores. Creo que así es más facil, aunque más largo, a la hora de referirse a ellos
             en otros scripts.*/
             //-------------------------------
-             int iTurnoActual = GeneralController.whosTurn == "Player01" ? 1 : GeneralController.whosTurn == "Player02" ? 2 :
-             GeneralController.whosTurn == "Player03" ? 3 : 4;
+            string iTurnoActual = GeneralController.whosTurn == "Player01" ? "Player01" : GeneralController.whosTurn == "Player02" ? "Player02" :
+            GeneralController.whosTurn == "Player03" ? "Player03" : "Player04";
             for(var i=1; i<=4; i++)
             {
                 //PLAYER 1
-                if(player01.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual==1)
+                if(player01.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual=="Player01")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son TRUE
                     //Coge el producto si o si
@@ -125,7 +125,7 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(player01.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual==1)
+                else if(player01.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player01")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son FALSE
                     //Coge el producto si o si
@@ -147,14 +147,14 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(iTurnoActual==1)
+                else if(iTurnoActual=="Player01")
                 {
                     player01.GetComponent<PlayerStats>().aciertoPlayer = false;  
                 }
 
                 //-------------------------------
                 //PLAYER 2
-                if(player02.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual==2)
+                if(player02.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual=="Player02")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son TRUE
                     //Coge el producto si o si
@@ -176,7 +176,7 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(player02.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual==2)
+                else if(player02.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player02")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son FALSE
                     //Coge el producto si o si
@@ -199,14 +199,14 @@ public class Concurso : MonoBehaviour
                     }
 
                 }
-                else if(iTurnoActual==2)
+                else if(iTurnoActual=="Player02")
                 {
                     player02.GetComponent<PlayerStats>().aciertoPlayer = false;  
                 }
 
                 //-------------------------------
                 //PLAYER 3
-                if(player03.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual==3)
+                if(player03.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual=="Player03")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son TRUE
                     //Coge el producto si o si
@@ -228,7 +228,7 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(player03.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual==3)
+                else if(player03.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player03")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son FALSE
                     //Coge el producto si o si
@@ -250,7 +250,7 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(iTurnoActual==3)
+                else if(iTurnoActual=="Player03")
                 {
                     //No ha acertado da igual turno y cantidad de alimentos
                     player03.GetComponent<PlayerStats>().aciertoPlayer = false;
@@ -258,7 +258,7 @@ public class Concurso : MonoBehaviour
 
                 //-------------------------------
                 //PLAYER 4
-                if(player04.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual==4)
+                if(player04.GetComponent<PlayerStats>().responsePlayer==true && response && iTurnoActual=="Player04")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son TRUE
                     //Coge el producto si o si
@@ -280,7 +280,7 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(player04.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual==4)
+                else if(player04.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player04")
                 {
                     //JUGADOR1 Activo y su respuesta y la respuesta son FALSE
                     //Coge el producto si o si
@@ -302,12 +302,12 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                     }
                 }
-                else if(iTurnoActual==4)
+                else if(iTurnoActual=="Player04")
                 {
                     //No ha acertado da igual turno y cantidad de alimentos
                     player04.GetComponent<PlayerStats>().aciertoPlayer = false;
                 }
-
+                /*
                 //Incrementamos el iTurnoActual;
                 if (iTurnoActual==4)
                 {
@@ -316,6 +316,24 @@ public class Concurso : MonoBehaviour
                 else
                 {
                     iTurnoActual++;
+                }
+                */
+
+                if(iTurnoActual == OrdenInicial.playersOrder[0])
+                {
+                    iTurnoActual = OrdenInicial.playersOrder[1];
+                }
+                else if(iTurnoActual == OrdenInicial.playersOrder[1])
+                {
+                    iTurnoActual = OrdenInicial.playersOrder[2];
+                }
+                else if(iTurnoActual == OrdenInicial.playersOrder[2])
+                {
+                    iTurnoActual = OrdenInicial.playersOrder[3];
+                }
+                else if(iTurnoActual == OrdenInicial.playersOrder[3])
+                {
+                    iTurnoActual = OrdenInicial.playersOrder[0];
                 }
             }
             

@@ -21,7 +21,7 @@ public class SalirTienda : MonoBehaviour
     {
         if(OrdenInicial.numTienda == "Tienda01")
         {
-            OrdenInicial.numTienda = "Terminado";
+            OrdenInicial.numTienda = "Tienda02";
             //Debug.Log(OrdenInicial.numTienda);
             GeneralController.productSelected = false;
             SceneManager.LoadScene("OutTiendas");
