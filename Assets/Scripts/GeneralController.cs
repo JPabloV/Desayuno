@@ -542,6 +542,11 @@ public class GeneralController : MonoBehaviour
             SceneManager.LoadScene("OutTiendas");
         }
     }
+
+    public void EmpezarGame()
+    {
+        SceneManager.LoadScene("OutTiendas");
+    }
     /*
     public void conteoAcertantes()
     {
