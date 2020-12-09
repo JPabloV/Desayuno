@@ -315,7 +315,7 @@ public class Jurado : MonoBehaviour
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.4f);
             }
-            else if(imageCambiar.sprite.name == "pan_0")
+            else if(imageCambiar.sprite.name == "pan_1")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
             } 

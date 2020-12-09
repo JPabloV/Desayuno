@@ -370,7 +370,7 @@ public class IniciarTienda : MonoBehaviour
                 - molletes de Antequera
                 - telera cordobesa
                     Hacer preguntas nuevas",
-            ImageSource = "Panaderia/pan",
+            ImageSource = "Panaderia/pan_1",
             IsAndaluz = true
         });
         lista.Add(new Alimento()
