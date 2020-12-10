@@ -56,11 +56,11 @@ public class ShoppingController : MonoBehaviour
             Shuffle(orden);
             Shuffle(orden);
 
-            del = GameObject.Find("txDel"); //  341.8 600
-            campo = GameObject.Find("txCampo"); // 609.8 600
-            a = GameObject.Find("txA"); // 824.5 600
-            la = GameObject.Find("txLa"); // 936.7 600
-            mesa = GameObject.Find("txMesa"); // 1139.7 600            
+            // del = GameObject.Find("txDel"); //  341.8 600
+            // campo = GameObject.Find("txCampo"); // 609.8 600
+            // a = GameObject.Find("txA"); // 824.5 600
+            // la = GameObject.Find("txLa"); // 936.7 600
+            // mesa = GameObject.Find("txMesa"); // 1139.7 600            
             
             // añado las posiciones al vector
             posicion = new float[5];
@@ -200,21 +200,21 @@ public class ShoppingController : MonoBehaviour
         if(InicioJuego.comienzo == false && numTienda == "Inicio")
         {
             float fixedSpeed = speed * Time.deltaTime; // la velocidad a la que se mueve el producto seleccionado. el Time.deltaTime es para condicionar la velocidad a la capacidad del ordenador               
-            del.transform.position = Vector3.MoveTowards(del.transform.position, new Vector3(341.8f, 600f, 0f), fixedSpeed*1.5f);
-            campo.transform.position = Vector3.MoveTowards(campo.transform.position, new Vector3(609.8f, 600f, 0f), fixedSpeed*1.5f);
-            a.transform.position = Vector3.MoveTowards(a.transform.position, new Vector3(824.5f, 600f, 0f), fixedSpeed*1.5f);
-            la.transform.position = Vector3.MoveTowards(la.transform.position, new Vector3(936.7f, 600f, 0f), fixedSpeed*1.5f);
-            mesa.transform.position = Vector3.MoveTowards(mesa.transform.position, new Vector3(1139.7f, 600f, 0f), fixedSpeed*1.5f);   
+            // del.transform.position = Vector3.MoveTowards(del.transform.position, new Vector3(341.8f, 600f, 0f), fixedSpeed*1.5f);
+            // campo.transform.position = Vector3.MoveTowards(campo.transform.position, new Vector3(609.8f, 600f, 0f), fixedSpeed*1.5f);
+            // a.transform.position = Vector3.MoveTowards(a.transform.position, new Vector3(824.5f, 600f, 0f), fixedSpeed*1.5f);
+            // la.transform.position = Vector3.MoveTowards(la.transform.position, new Vector3(936.7f, 600f, 0f), fixedSpeed*1.5f);
+            // mesa.transform.position = Vector3.MoveTowards(mesa.transform.position, new Vector3(1139.7f, 600f, 0f), fixedSpeed*1.5f);   
 
-            if(mesa.transform.position == new Vector3(1139.7f, 600f, 0f))
-            {
+            // if(mesa.transform.position == new Vector3(1139.7f, 600f, 0f))
+            // {
                 titulo02.SetActive(true);
                 jugadores[0].transform.position = Vector3.MoveTowards(jugadores[0].transform.position, new Vector3(posicion[orden[0]], 200f, 0f), fixedSpeed); // mueve el producto seleccionado desde su posisicón inicial a la del Target
                 jugadores[1].transform.position = Vector3.MoveTowards(jugadores[1].transform.position, new Vector3(posicion[orden[1]], 200f, 0f), fixedSpeed); // mueve el producto seleccionado desde su posisicón inicial a la del Target
                 jugadores[2].transform.position = Vector3.MoveTowards(jugadores[2].transform.position, new Vector3(posicion[orden[2]], 200f, 0f), fixedSpeed); // mueve el producto seleccionado desde su posisicón inicial a la del Target
                 jugadores[3].transform.position = Vector3.MoveTowards(jugadores[3].transform.position, new Vector3(posicion[orden[3]], 200f, 0f), fixedSpeed); // mueve el producto seleccionado desde su posisicón inicial a la del Target
                 jugadores[4].transform.position = Vector3.MoveTowards(jugadores[4].transform.position, new Vector3(posicion[4], 200f, 0f), fixedSpeed); // mueve el producto seleccionado desde su posisicón inicial a la del Target
-            }
+            // }
             
             if(jugadores[0].transform.position == new Vector3(posicion[orden[0]], 200f, 0f) && numTienda == "Inicio")
             {   
