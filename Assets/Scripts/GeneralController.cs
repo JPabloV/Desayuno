@@ -22,7 +22,7 @@ public class GeneralController : MonoBehaviour
     public static string whosTurn;
     public static bool turnSpin = true;
     public int numQuestions;
-    private Transform garbage;
+    public Transform garbage;
     public GameObject tendero;
     public static bool repartoGanadores;
     public static string acertante;

@@ -419,7 +419,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 8,
             Puntuacion = 2,
             Observaciones = string.Empty,
-            ImageSource = "Varios/limon",
+            ImageSource = "Varios/huevo",
             IsAndaluz = false
         });
         lista.Add(new Alimento()
@@ -487,7 +487,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 1,
             Puntuacion = 1,
             Observaciones = @"En Andalucía apenas se produce 1 paquete cereal  de desayuno.",
-            ImageSource = "Frutas/limon",
+            ImageSource = "Frutas/maiz",
             IsAndaluz = false
         });
         lista.Add(new Alimento()
@@ -498,7 +498,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 1,
             Puntuacion = 3,
             Observaciones = @"En Andalucía apenas se produce En grano",
-            ImageSource = "Frutas/limon",
+            ImageSource = "Frutas/maiz",
             IsAndaluz = false
             
         });
@@ -532,7 +532,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 1,
             Puntuacion = 3,
             Observaciones = string.Empty,
-            ImageSource = "Frutas/limon",
+            ImageSource = "Frutas/harina",
             IsAndaluz = false
         });
         lista.Add(new Alimento()
@@ -543,7 +543,7 @@ public class IniciarTienda : MonoBehaviour
             Unidades = 2,
             Puntuacion = 3,
             Observaciones = string.Empty,
-            ImageSource = "Frutas/limon",
+            ImageSource = "Frutas/almendras",
             IsAndaluz = true
         });
         lista.Add(new Alimento()
