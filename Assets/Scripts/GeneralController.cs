@@ -346,6 +346,7 @@ public class GeneralController : MonoBehaviour
         cambioTurno = true;
         numQuestions -= 1;
         numAcertantes = 0;
+        productSelected = false;
     }
 
     public void OnMouseDown()
@@ -458,7 +459,6 @@ public class GeneralController : MonoBehaviour
             questionBox.SetActive(false);
             conteoAcertantes();
             resuelto = false;
-            productSelected = false;
             GameObject.Find(Producto.productoEscogido).GetComponent<Producto>().enableMove = true;
         }
     }

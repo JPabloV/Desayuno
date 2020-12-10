@@ -22,6 +22,14 @@ public class ShoppingController : MonoBehaviour
   
     void Start()
     {
+        if(OrdenInicial.numTienda == "Inicio")
+        {
+            InicioJuego.comienzo = false;
+        }
+        
+        Debug.Log(OrdenInicial.numTienda);
+        Debug.Log(InicioJuego.comienzo);
+
         numTienda = OrdenInicial.numTienda;
         target = GameObject.Find("Target").GetComponent<Transform>();
 
@@ -32,6 +40,7 @@ public class ShoppingController : MonoBehaviour
         jugadores[3] = GameObject.Find("Player04");
         jugadores[4] = GameObject.Find("Phantom");
 
+        FindInActiveObjectByName("TituloGlobal").SetActive(true);
         tituloGlobal = GameObject.Find("TituloGlobal");
         titulo01 = GameObject.Find("txTitulo01");
         titulo02 = GameObject.Find("txTitulo02");
@@ -258,4 +267,21 @@ public class ShoppingController : MonoBehaviour
             a[rnd] = temp;
         }
     }
+
+        GameObject FindInActiveObjectByName(string name)
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].name == name)
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
+    }
+
 }

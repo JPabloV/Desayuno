@@ -31,7 +31,7 @@ public class SalirTienda : MonoBehaviour
             OrdenInicial.numTienda = "Tienda03";
             //Debug.Log(OrdenInicial.numTienda);
             GeneralController.productSelected = false;
-            SceneManager.LoadScene("OutTiendas");
+            SceneManager.LoadScene("Ranking");
         }
         else if(OrdenInicial.numTienda == "Tienda03")
         {

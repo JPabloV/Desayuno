@@ -91,12 +91,13 @@ public class Ranking : MonoBehaviour
                 // Sprite mySprite = Resources.Load<Sprite>(rutaSprite + sNuevaImage);
                 Sprite mySprite = Resources.Load<Sprite>(alimento.ImageSource);
                 imageCambiar.sprite = mySprite;
+                imageCambiar.SetNativeSize(); // redimensiona la imagen con el height y el width del sprite que incluye
 
-                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "sandia" || imageCambiar.sprite.name == "azucar")
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || imageCambiar.sprite.name == "azucar")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
-                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || imageCambiar.sprite.name == "croisant_0")
+                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || imageCambiar.sprite.name == "aceite de oliva" || imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || imageCambiar.sprite.name == "croisant_0")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
@@ -137,7 +138,9 @@ public class Ranking : MonoBehaviour
 
     public void RestartGame()
     {
+        OrdenInicial.numTienda = "Inicio";
         SceneManager.LoadScene("Inicio");
+        OrdenInicial.playersOrder = new List<string>();
     }
 
 

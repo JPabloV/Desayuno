@@ -204,6 +204,11 @@ public class Jurado : MonoBehaviour
                 contador++;
             }
         }
+        else //con esto he intentado apañar para que si un jugador no ha acertado nada de nada, saliese este mensaje y se activase el botón de "listo", pero no me ha funcionado, ¿Será que respuestasAcvertadasPorPlayer nunca es null?
+        {
+            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Vaya! Parece que no conseguiste ningún producto (pulsa <¡Listo> para continuar)";
+            btListo.SetActive(true);
+        }
         while(contador<=16)
         {
             //Desactivamos el resto de alimentos.
@@ -303,7 +308,7 @@ public class Jurado : MonoBehaviour
             // más o menos adecuado, ya que alguos estan pintados con una resolución más grande que otros, y si la escala
             // es la misma salen muy descompensados. Aquí las reescalo a las escalas que había usado en las tiendas para
             // cada producto. Faltan los que aún no tenemos sprite, que por defecto se están reescalando en el "else"
-            if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "sandia" || imageCambiar.sprite.name == "azucar")
+            if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || imageCambiar.sprite.name == "azucar")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
