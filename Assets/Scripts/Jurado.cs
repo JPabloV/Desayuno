@@ -193,7 +193,7 @@ public class Jurado : MonoBehaviour
             contador++;
         }
         contador=1;
-        if (respuestasAcertadasPorPlayer!=null)
+        if (respuestasAcertadasPorPlayer!=null && respuestasAcertadasPorPlayer.Count>0)
         {
             foreach(var alimento in respuestasAcertadasPorPlayer)
             {
@@ -316,17 +316,22 @@ public class Jurado : MonoBehaviour
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
             } 
-            else if(imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
+            else if(imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "queso" || 
+            imageCambiar.sprite.name == "yogur" || imageCambiar.sprite.name == "almendras")
             {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.4f);
+                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
             }
             else if(imageCambiar.sprite.name == "pan_1")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
             } 
-            else if (imageCambiar.sprite.name == "leche")
+            else if (imageCambiar.sprite.name == "leche" || imageCambiar.sprite.name == "maiz")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.3f, 0.3f);
+            }
+            else if (imageCambiar.sprite.name == "huevo" || imageCambiar.sprite.name == "harina")
+            {
+                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
             }
             else
             {
