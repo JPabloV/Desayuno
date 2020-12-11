@@ -2764,7 +2764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "V\xE1monos de compras a adquirir productos\n para un desayuno saludable"
+  m_Text: "\xA1V\xE1monos de compras a adquirir productos\n para un desayuno saludable!"
 --- !u!222 &1802362265
 CanvasRenderer:
   m_ObjectHideFlags: 0
