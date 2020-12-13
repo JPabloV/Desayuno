@@ -69,7 +69,7 @@ public class Ranking : MonoBehaviour
         // Esto no estaba funcionando, así que lo comento. Añadí los puntos de otra forma al inicio del start
         //Recorrer la puntuacion final por jugador para pintar productos y poner su valor
         
-        foreach (var item in datosPuntuacionFinal.OrderBy(p=>p.PuntuacionFinal))
+        foreach (var item in datosPuntuacionFinal.OrderByDescending(p=>p.PuntuacionFinal))
         {
             pintarProductos(item.Alimentos, item.Player);
             GameObject.Find("Puntuacion"+item.Player).GetComponent<Text>().text = item.PuntuacionFinal.ToString();
@@ -114,7 +114,8 @@ public class Ranking : MonoBehaviour
             imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
             imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
             imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-            imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
+            imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" || 
+            imageCambiar.sprite.name == "galletas")
             {
             imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
             } 

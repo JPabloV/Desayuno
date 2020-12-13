@@ -179,14 +179,7 @@ public class Jurado : MonoBehaviour
         //Ir recorriendo datosRespuestas del jugador y mostrar las imágenes.
         var respuestasAcertadasPorPlayer = mostrarAlimentosConseguidos(iPlayer);
         int contador=1;
-        //Bucle para activar los productos previo pintado
-        /*while(contador<=16)
-        {
-            //Desactivamos el resto de alimentos.
-            var estProd = FindIncludingInactive("EstProd"+contador);
-            estProd.SetActive(true);
-            contador++;
-        }*/
+
         while(contador<=16)
         {
             FindInActiveObjectByName("EstProd"+contador).SetActive(true);
@@ -204,7 +197,7 @@ public class Jurado : MonoBehaviour
                 contador++;
             }
         }
-        else //con esto he intentado apañar para que si un jugador no ha acertado nada de nada, saliese este mensaje y se activase el botón de "listo", pero no me ha funcionado, ¿Será que respuestasAcvertadasPorPlayer nunca es null?
+        else //Un jugador no ha acertado nada de nada, saliese este mensaje y se activase el botón de "listo"
         {
             juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Vaya! Parece que no conseguiste ningún producto (pulsa <¡Listo> para continuar)";
             btListo.SetActive(true);
@@ -251,46 +244,6 @@ public class Jurado : MonoBehaviour
         return validTransforms.ToArray();
     }
 
-    /*
-    //hideously slow as it iterates all objects, so don't overuse!
-    public static GameObject FindInChildrenIncludingInactive(GameObject go, string name)
-    {
-
-        for (int i=0; i < go.transform.childCount; i++)
-        {
-            if (go.transform.GetChild(i).gameObject.name == name) return go.transform.GetChild(i).gameObject;
-            GameObject found = FindInChildrenIncludingInactive(go.transform.GetChild(i).gameObject, name);
-            if (found != null) return found;
-        }
-
-        return null;  //couldn't find crap
-    }
-    
-    //hideously slow as it iterates all objects, so don't overuse!
-    public static GameObject FindIncludingInactive(string name)
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        if (!scene.isLoaded)
-        {
-            //no scene loaded
-            return null;
-        }
-
-        var game_objects = new List();
-        scene.GetRootGameObjects(game_objects);
-
-        foreach (GameObject obj in game_objects)
-        {
-            if (obj.transform.name == name) return obj;
-
-            GameObject found = FindInChildrenIncludingInactive(obj, name);
-            if (found) return found;
-         }
-
-        return null;
-    }
-    */
-
     public void cambiarImagen(string sNombreObject, string sNuevaImage)
     {
         try
@@ -329,7 +282,8 @@ public class Jurado : MonoBehaviour
             imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
             imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
             imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-            imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
+            imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" || 
+            imageCambiar.sprite.name == "galletas")
             {
             imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
             } 
