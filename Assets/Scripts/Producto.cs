@@ -51,8 +51,6 @@ public class Producto : MonoBehaviour
                     this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                     enableMove = false;
                     GeneralController.productoGanado = "wait";
-                    //GameObject.Find("GeneralController").GetComponent<GeneralController>().numQuestions -= 1;
-                    //GeneralController.cambioTurno = true;
                     GeneralController.repartoGanadores = true;
                 }
             }
@@ -63,7 +61,6 @@ public class Producto : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     enableMove = false;
-                    //toGarbage = false;
                     GeneralController.productoGanado = "wait";
                     playerActive = GameObject.Find(GeneralController.whosTurn);
                     GeneralController.repartoGanadores = true;
@@ -79,8 +76,6 @@ public class Producto : MonoBehaviour
                 Destroy(this.gameObject);
                 enableMove = false;  
                 GeneralController.productoGanado = "wait";
-                //GameObject.Find("GeneralController").GetComponent<GeneralController>().numQuestions -= 1;
-                //GeneralController.cambioTurno = true;
                 GeneralController.unidadesProducto -= 1;
                 GeneralController.repartoGanadores = true;
             }

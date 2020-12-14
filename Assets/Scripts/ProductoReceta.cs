@@ -12,7 +12,6 @@ public class ProductoReceta : MonoBehaviour
     public static string ProductoTag;
     public static bool productSelected = false;
     public int numProductos = 0;
-    //public GameObject playerActive;
     public Transform[] targets;
     public Transform target;
     public static int iterante = 0;
@@ -49,7 +48,6 @@ public class ProductoReceta : MonoBehaviour
             if(this.gameObject.transform.position == target.position) // Controla si el producto ya ha llegado a las coordenadas del Target. Si es así inactiva el movimiento y lo rota a su posición original.
             {
                 enableMove = false;
-                //playerActive = GameObject.Find(GeneralController.whosTurn);
                 this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 productSelected = false;
                 iterante += 1;
