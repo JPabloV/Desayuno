@@ -45,7 +45,7 @@ public class Ranking : MonoBehaviour
         //-------------------
 
         Order = new GameObject[4];     
-        foreach(KeyValuePair<GameObject, int> puntos in rankingPlayers.OrderByDescending(key => key.Value))
+        foreach(KeyValuePair<GameObject, int> puntos in rankingPlayers.OrderBy(key => key.Value))
         {
             Order[x] = puntos.Key;
             x++;
@@ -59,7 +59,7 @@ public class Ranking : MonoBehaviour
         // Esto no estaba funcionando, así que lo comento. Añadí los puntos de otra forma al inicio del start
         //Recorrer la puntuacion final por jugador para pintar productos y poner su valor
         
-        foreach (var item in datosPuntuacionFinal.OrderByDescending(p=>p.PuntuacionFinal))
+        foreach (var item in datosPuntuacionFinal.OrderBy(p=>p.PuntuacionFinal))
         {
             pintarProductos(item.Alimentos, item.Player);
             GameObject.Find("Puntuacion"+item.Player).GetComponent<Text>().text = item.PuntuacionFinal.ToString();
@@ -83,42 +83,44 @@ public class Ranking : MonoBehaviour
                 imageCambiar.sprite = mySprite;
                 imageCambiar.SetNativeSize(); // redimensiona la imagen con el height y el width del sprite que incluye
 
-            if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
-            imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
-            imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
-            imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "manzana" ||
-            imageCambiar.sprite.name == "huevo")
-            {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            }
-            else if(imageCambiar.sprite.name == "huevo")
-            {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
-            }
-            else if(imageCambiar.sprite.name == "pan_1")
-            {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
-            } 
-            else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
-            imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || 
-            imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
-            imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
-            imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-            imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" || 
-            imageCambiar.sprite.name == "galletas")
-            {
-            imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            } 
-
-            else if (imageCambiar.sprite.name == "maiz" ||
-            imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "almendras")
-            {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
-            }
-            else
-            {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            }
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
+                imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
+                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
+                imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "huevo")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                }
+                else if(imageCambiar.sprite.name == "huevo")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
+                }
+                else if(imageCambiar.sprite.name == "pan_1")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+                } 
+                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
+                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || 
+                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
+                imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
+                imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
+                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" 
+                || imageCambiar.sprite.name == "manzana")
+                {
+                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                } 
+                else if (imageCambiar.sprite.name == "maiz" ||
+                imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "galletas")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
+                }
+                else if (imageCambiar.sprite.name == "almendras")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                }
+                else
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                }
                 contador++;
             }
         }
