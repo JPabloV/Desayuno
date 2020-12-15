@@ -13,23 +13,17 @@ public class PlatoStats : MonoBehaviour
     public int pVegetales;
     public int pFrutas;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {        
          if(adicionPuntoPlatos == true)
         {
-            if(tipoAlimento == 1 || tipoAlimento == 10)
+            if(tipoAlimento == 1 || tipoAlimento == 11)
             {
                 pCereales += 1;
                 this.gameObject.transform.GetChild(2).gameObject.GetComponent<Text>().text = pCereales.ToString();
             }
-            else if(tipoAlimento == 5 || tipoAlimento == 6 || tipoAlimento == 7 || tipoAlimento == 8 || tipoAlimento == 9)
+            else if(tipoAlimento == 4 || tipoAlimento == 5 || tipoAlimento == 6 || tipoAlimento == 7 || tipoAlimento == 8 || tipoAlimento == 12)
             {
                 pProteinas += 1;
                 this.gameObject.transform.GetChild(3).gameObject.GetComponent<Text>().text = pProteinas.ToString();
@@ -39,7 +33,7 @@ public class PlatoStats : MonoBehaviour
                 pFrutas += 1;
                 this.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = pFrutas.ToString();
             }
-            else if(tipoAlimento == 3 || tipoAlimento == 4 || tipoAlimento == 11)
+            else if(tipoAlimento == 3 || tipoAlimento ==  9 || tipoAlimento == 10)
             {
                 pVegetales += 1;
                 this.gameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = pVegetales.ToString();

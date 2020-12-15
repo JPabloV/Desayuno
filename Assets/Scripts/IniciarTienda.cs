@@ -7,20 +7,6 @@ public class IniciarTienda : MonoBehaviour
     
     public List<Preguntas> preguntas;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //RellenarCategorias();
-        //RellenarAlimentos();
-        //RellenarPreguntas();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public List<TipoAlimento> RellenarCategorias()
     {
         //Rellenamos los tipos de alimentos / Categorias.
@@ -103,6 +89,14 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new TipoAlimento()
         {
             ID=11,
+            Nombre ="Grasas, dulces y embutidos.",
+            Descripcion = @"Alimentos ricos en grasas saturadas (mantequillas, margarinas o embutidos grasos.
+                La miel, el azúcar de mesa o la bollería industrial contienen azúcares, que son hidratos de carbono simples de absorción rápida.",
+            Frecuencia = @"CONSUMO MODERADO Y OCASIONAL"
+        });
+        lista.Add(new TipoAlimento()
+        {
+            ID=12,
             Nombre ="Grasas, dulces y embutidos.",
             Descripcion = @"Alimentos ricos en grasas saturadas (mantequillas, margarinas o embutidos grasos.
                 La miel, el azúcar de mesa o la bollería industrial contienen azúcares, que son hidratos de carbono simples de absorción rápida.",
@@ -322,7 +316,7 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new Alimento()
         {
             ID=16,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 12,
             Nombre = "Mantequilla",
             Unidades = 2,
             Puntuacion = 1,
@@ -560,7 +554,7 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new Alimento()
         {
             ID=36,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 2,
             Nombre = "Mermelada",
             Unidades = 1,
             Puntuacion = 1,
@@ -593,7 +587,7 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new Alimento()
         {
             ID=39,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 5,
             Nombre = "Embutido ibérico",
             Unidades = 2,
             Puntuacion = 2,
@@ -770,7 +764,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=15,
             IDAlimento = 10,
-            IDTipoAlimento = 2,
+            IDTipoAlimento = 3,
             Pregunta = "El tomate cherry es un cruce entre tomate y cereza y se obtiene de un arbusto.",
             Respuesta = false
         });                
@@ -779,7 +773,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=16,
             IDAlimento = 10,
-            IDTipoAlimento = 2,
+            IDTipoAlimento = 3,
             Pregunta = "Procede de América del Sur. Lo trajeron a Europa los conquistadores españoles y durante mucho tiempo se utilizó como planta ornamental.",
             Respuesta = true
         });                
@@ -788,7 +782,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=17,
             IDAlimento = 10,
-            IDTipoAlimento = 2,
+            IDTipoAlimento = 3,
             Pregunta = "Las siglas del tomate RAF corresponden a 'rojo almeriense fuerte'.",
             Respuesta = false
         });                
@@ -897,7 +891,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=28,
             IDAlimento = 16,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 12,
             Pregunta = "La mantequilla se obtiene al batir la nata que contiene la leche.",
             Respuesta = true
         });            
@@ -906,7 +900,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=29,
             IDAlimento = 16,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 12,
             Pregunta = "La mantequilla y margarina son lo mismo, simplemente son dos marcas comerciales.",
             Respuesta = false
         });            
@@ -1240,7 +1234,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=63,
             IDAlimento = 34,
-            IDTipoAlimento = 9,
+            IDTipoAlimento = 1,
             Pregunta = "La almendra es un fruto seco de origen tropical, ya que el almendro necesita mucha agua para crecer y dar frutos.",
             Respuesta = false
         });
@@ -1249,7 +1243,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=64,
             IDAlimento = 34,
-            IDTipoAlimento = 9,
+            IDTipoAlimento = 1,
             Pregunta = "Las almendras hay que comerlas con moderación porque son frutos secos y engordan mucho.",
             Respuesta = false
         });
@@ -1278,7 +1272,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=67,
             IDAlimento = 36,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 2,
             Pregunta = "La palabra 'mermelada' proviene del término portugués 'marmelada', cuyo significado es 'confitura de membrillo'.",
             Respuesta = true
         });
@@ -1287,7 +1281,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=68,
             IDAlimento = 36,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 2,
             Pregunta = "Como tiene mucha fruta, la mermelada cuenta como una de las raciones de fruta diaria que tenemos que tomar.",
             Respuesta = false
         });
@@ -1335,7 +1329,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=73,
             IDAlimento = 39,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 5,
             Pregunta = "Los cerdos pueden ser blancos o ibéricos.",
             Respuesta = true
         });
@@ -1344,7 +1338,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=74,
             IDAlimento = 39,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 5,
             Pregunta = "Un jamón de pata negra se distingue porque es completamente negro.",
             Respuesta = false
         });
@@ -1353,7 +1347,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=75,
             IDAlimento = 39,
-            IDTipoAlimento = 11,
+            IDTipoAlimento = 5,
             Pregunta = "El jamón, serrano o ibérico, se obtiene tras salar y secar al aire las patas traseras del cerdo.",
             Respuesta = true
         });
