@@ -104,18 +104,6 @@ public class Jurado : MonoBehaviour
         plato02.transform.SetParent(player02.transform);
         plato03.transform.SetParent(player03.transform);
         plato04.transform.SetParent(player04.transform);
-
-        // Esto reordena según OrdenInicia.playersOrder, pero por ahora saldrán de Player01 a Player04
-        /*
-        // reordena los jugadores
-        if (OrdenInicial.playersOrder.Count>0)
-        {
-            GameObject.Find(OrdenInicial.playersOrder[0]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
-            GameObject.Find(OrdenInicial.playersOrder[1]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
-            GameObject.Find(OrdenInicial.playersOrder[2]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
-            GameObject.Find(OrdenInicial.playersOrder[3]).GetComponent<Transform>().transform.position = new Vector3(90f, 90f, 0f);
-        }
-        */
         
         // Ordena los jugadores según sus nombres, para que concuerden con las listas de productos
         player01.GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
@@ -273,7 +261,7 @@ public class Jurado : MonoBehaviour
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
             }
-            else if(imageCambiar.sprite.name == "pan_1")
+            else if(imageCambiar.sprite.name == "pan_1" || imageCambiar.sprite.name == "almendras")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
             } 
@@ -289,7 +277,7 @@ public class Jurado : MonoBehaviour
             } 
 
             else if (imageCambiar.sprite.name == "maiz" ||
-            imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "almendras")
+            imageCambiar.sprite.name == "harina")
             {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
             }
@@ -305,17 +293,15 @@ public class Jurado : MonoBehaviour
         
      }
 
-
-    // Vector3(0.1820091f*4f, 0.4825088f*4f, 0.518726f*4f);
      //Funcion al clicar los productos pintados
     public static void AñadirProductoReceta(int iPlayer, int iIDProducto)
     {
         var productoReceta = datosRespuestas.Where(pl=>pl.Player==iPlayer).
             Where(al=>al.Alimento.ID==iIDProducto).First();
         datosRecetas.Add(productoReceta);
-        //Numero de productos <=24
+
         Debug.Log("Num. productos para la receta." + datosRecetas.Count);
-        //List<Puntuacion> p = ObtenerPuntuacion();
+
     }
 
     //Creamos la puntacion con los datos de las recetas por Jugador.
@@ -430,7 +416,7 @@ public class Jurado : MonoBehaviour
     {
         if (iTipos>4)
         {
-            return 8;
+            return 6;
         }
         else if (iTipos>2 && iTipos<=4)
         {
@@ -506,9 +492,16 @@ public class Jurado : MonoBehaviour
         }
         var resul = result[randomInt];
         GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
-                                + " que es otro producto andaluz por excelencia y haber aumentado tu puntación";
+                                + " que es otro producto andaluz por excelencia y haber aumentado tu puntación";       
+        //Cambiamos la imagen.
+        Sprite mySprite = Resources.Load<Sprite>(resul.ImageSource);                    
+        Image imageReceta = GameObject.Find("ImageReceta").GetComponent<Image>();
+        imageReceta.sprite = mySprite;
+        imageReceta.SetNativeSize();
+        imageReceta.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
         juez.transform.GetChild(0).gameObject.SetActive(false);
-        //Debug.Log(productsInPlate[0]);
+
     }
 
     // Este método se activa al pulsar el botón "Continuar" (objeto btContinuar)
@@ -553,36 +546,7 @@ public class Jurado : MonoBehaviour
 
             StartCoroutine(EscenaFinal());
         }
-        /*
-        if(whosTurn == OrdenInicial.playersOrder[0])
-        {
-            whosTurn = OrdenInicial.playersOrder[1];
-            Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Segundo consursante, elije tus ingredientes.";
-            pintarProductos(2);
-        }
-        else if(whosTurn == OrdenInicial.playersOrder[1])
-        {
-            whosTurn = OrdenInicial.playersOrder[2];
-            Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Tercer consursante, elije tus ingredientes.";
-            pintarProductos(3);
-        }
-        else if(whosTurn == OrdenInicial.playersOrder[2])
-        {
-            whosTurn = OrdenInicial.playersOrder[3];
-            Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Cuarto consursante, elije tus ingredientes.";
-            pintarProductos(4);
-        }
-        else if(whosTurn == OrdenInicial.playersOrder[3])
-        {
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Gracias por participar! ¡Puntuemos las recetas!";
-            StartCoroutine(EscenaFinal());
-        }
-        */
-
-        //ProductoReceta.returning = true;
+        
         productsInPlate = new List<string>();
         
     }

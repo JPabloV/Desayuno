@@ -25,17 +25,7 @@ public class Ranking : MonoBehaviour
         winningBox = GameObject.Find("WinningBox");
         winningBox.SetActive(false);
         datosPuntuacionFinal = Jurado.ObtenerPuntuacion();
-        /*
-        puntuacionPlayer1 = datosPuntuacionFinal[0].PuntuacionFinal;
-        puntuacionPlayer2 = datosPuntuacionFinal[1].PuntuacionFinal;
-        puntuacionPlayer3 = datosPuntuacionFinal[2].PuntuacionFinal;
-        puntuacionPlayer4 = datosPuntuacionFinal[3].PuntuacionFinal;
-      
-        GameObject.Find("Puntuacion1").GetComponent<Text>().text = datosPuntuacionFinal[0].PuntuacionFinal.ToString();
-        GameObject.Find("Puntuacion2").GetComponent<Text>().text = datosPuntuacionFinal[1].PuntuacionFinal.ToString();
-        GameObject.Find("Puntuacion3").GetComponent<Text>().text = datosPuntuacionFinal[2].PuntuacionFinal.ToString();
-        GameObject.Find("Puntuacion4").GetComponent<Text>().text = datosPuntuacionFinal[3].PuntuacionFinal.ToString();
-        */
+
         //-------------------
         // INSTANCIAR OBJETOS
         //-------------------
@@ -55,7 +45,7 @@ public class Ranking : MonoBehaviour
         //-------------------
 
         Order = new GameObject[4];     
-        foreach(KeyValuePair<GameObject, int> puntos in rankingPlayers.OrderBy(key => key.Value))
+        foreach(KeyValuePair<GameObject, int> puntos in rankingPlayers.OrderByDescending(key => key.Value))
         {
             Order[x] = puntos.Key;
             x++;

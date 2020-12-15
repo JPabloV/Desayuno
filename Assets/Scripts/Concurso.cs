@@ -307,17 +307,6 @@ public class Concurso : MonoBehaviour
                     //No ha acertado da igual turno y cantidad de alimentos
                     player04.GetComponent<PlayerStats>().aciertoPlayer = false;
                 }
-                /*
-                //Incrementamos el iTurnoActual;
-                if (iTurnoActual==4)
-                {
-                    iTurnoActual=1;
-                }
-                else
-                {
-                    iTurnoActual++;
-                }
-                */
 
                 if(iTurnoActual == OrdenInicial.playersOrder[0])
                 {

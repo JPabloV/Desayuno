@@ -322,18 +322,6 @@ public class Concurso4 : MonoBehaviour
                     player04.GetComponent<PlayerStats>().aciertoPlayer = false;
                 }
 
-                /*
-                //Incrementamos el iTurnoActual;
-                if (iTurnoActual==4)
-                {
-                    iTurnoActual=1;
-                }
-                else
-                {
-                    iTurnoActual++;
-                }
-                */
-
                 if(iTurnoActual == OrdenInicial.playersOrder[0])
                 {
                     iTurnoActual = OrdenInicial.playersOrder[1];
