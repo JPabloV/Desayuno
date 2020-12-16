@@ -90,28 +90,26 @@ public class Ranking : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
-                else if(imageCambiar.sprite.name == "huevo")
+                else if(imageCambiar.sprite.name == "huevo" || imageCambiar.sprite.name == "harina")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
                 }
                 else if(imageCambiar.sprite.name == "pan_1")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.11f, 0.11f, 0.11f);
                 } 
-                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
-                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || 
+                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "miel" || 
                 imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
-                imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" 
+                imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "queso"  
                 || imageCambiar.sprite.name == "manzana")
                 {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
-                else if (imageCambiar.sprite.name == "maiz" ||
-                imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "galletas")
+                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas" || imageCambiar.sprite.name == "croisant_0"
+                || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "yogur")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.4f);
                 }
                 else if (imageCambiar.sprite.name == "almendras")
                 {
