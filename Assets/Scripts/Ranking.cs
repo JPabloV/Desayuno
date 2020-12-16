@@ -86,7 +86,7 @@ public class Ranking : MonoBehaviour
                 if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
                 imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
                 imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
-                imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "huevo")
+                imageCambiar.sprite.name == "huevo")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -114,6 +114,10 @@ public class Ranking : MonoBehaviour
                 else if (imageCambiar.sprite.name == "almendras")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                }
+                else if (imageCambiar.sprite.name == "azucar")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
                 else
                 {

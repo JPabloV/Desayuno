@@ -253,7 +253,7 @@ public class Jurado : MonoBehaviour
             if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
                 imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
                 imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
-                imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "huevo")
+                imageCambiar.sprite.name == "huevo")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -270,8 +270,7 @@ public class Jurado : MonoBehaviour
                 imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
                 imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" 
-                || imageCambiar.sprite.name == "manzana")
+                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
                 {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
@@ -283,6 +282,10 @@ public class Jurado : MonoBehaviour
                 else if (imageCambiar.sprite.name == "almendras")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                }
+                else if (imageCambiar.sprite.name == "azucar")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
                 else
                 {
@@ -509,7 +512,15 @@ public class Jurado : MonoBehaviour
         Image imageReceta = GameObject.Find("ImageReceta").GetComponent<Image>();
         imageReceta.sprite = mySprite;
         imageReceta.SetNativeSize();
-        imageReceta.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        if(imageReceta.sprite.name == "pan_1")
+        {
+            imageReceta.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
+        } 
+        else
+        {
+            imageReceta.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
+        
 
         //Borramos el alimento Andaluz
         AlimentosAndalucesReceta.RemoveAll(a=>a.ID == randomInt);
