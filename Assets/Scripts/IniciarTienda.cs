@@ -217,7 +217,7 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new Alimento()
         {
             ID=10,
-            IDTipoAlimento = 2,
+            IDTipoAlimento = 3,
             Nombre = "Tomate",
             Unidades = 2,
             Puntuacion = 4,
@@ -443,7 +443,7 @@ public class IniciarTienda : MonoBehaviour
         lista.Add(new Alimento()
         {
             ID=26,
-            IDTipoAlimento = 9,
+            IDTipoAlimento = 10,
             Nombre = "Aceituna de mesa",
             Unidades = 2,
             Puntuacion = 3,

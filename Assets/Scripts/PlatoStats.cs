@@ -18,7 +18,7 @@ public class PlatoStats : MonoBehaviour
     {        
          if(adicionPuntoPlatos == true)
         {
-            if(tipoAlimento == 1 || tipoAlimento == 11)
+            if(tipoAlimento == 1 || tipoAlimento == 9 || tipoAlimento == 11)
             {
                 pCereales += 1;
                 this.gameObject.transform.GetChild(2).gameObject.GetComponent<Text>().text = pCereales.ToString();
@@ -33,7 +33,7 @@ public class PlatoStats : MonoBehaviour
                 pFrutas += 1;
                 this.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = pFrutas.ToString();
             }
-            else if(tipoAlimento == 3 || tipoAlimento ==  9 || tipoAlimento == 10)
+            else if(tipoAlimento == 3 || tipoAlimento == 10)
             {
                 pVegetales += 1;
                 this.gameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = pVegetales.ToString();
@@ -51,12 +51,12 @@ public class PlatoStats : MonoBehaviour
             foreach (var plato in pListaRespuestas)
             {
                 tipoAlimento = plato.Alimento.IDTipoAlimento;
-                if(tipoAlimento == 1)
+                if(tipoAlimento == 1 || tipoAlimento == 9 || tipoAlimento == 11)
                 {
                     pCereales += 1;
                     this.gameObject.transform.GetChild(2).gameObject.GetComponent<Text>().text = pCereales.ToString();
                 }
-                else if(tipoAlimento == 5 || tipoAlimento == 6 || tipoAlimento == 7 || tipoAlimento == 8 || tipoAlimento == 9)
+                else if(tipoAlimento == 4 || tipoAlimento == 5 || tipoAlimento == 6 || tipoAlimento == 7 || tipoAlimento == 8 || tipoAlimento == 12)
                 {
                     pProteinas += 1;
                     this.gameObject.transform.GetChild(3).gameObject.GetComponent<Text>().text = pProteinas.ToString();
@@ -66,7 +66,7 @@ public class PlatoStats : MonoBehaviour
                     pFrutas += 1;
                     this.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = pFrutas.ToString();
                 }
-                else if(tipoAlimento == 3 || tipoAlimento == 4 || tipoAlimento == 11)
+                else if(tipoAlimento == 3 || tipoAlimento == 10)
                 {
                     //el 4 y el 11 no tenían asignado ninguno, son los lacteos los asigno mientras a los Vegetales
                     pVegetales += 1;
