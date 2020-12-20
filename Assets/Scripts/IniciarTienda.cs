@@ -637,7 +637,7 @@ public class IniciarTienda : MonoBehaviour
             ID=2,
             IDAlimento = 1,
             IDTipoAlimento = 2,
-            Pregunta = "La manzana es una de las frutas más cultivasdas y consumidas del mundo.",
+            Pregunta = "La manzana es una de las frutas más cultivadas y consumidas del mundo.",
             Respuesta = true
         });
 

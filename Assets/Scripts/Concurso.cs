@@ -24,6 +24,7 @@ public class Concurso : MonoBehaviour
     public static bool aciertopl01, aciertopl02, aciertopl03, aciertopl04;
     public GameObject player01, player02, player03, player04;
     public GameObject plato01, plato02, plato03, plato04;
+    public bool unAcierto = false;
     
     
     // Start is called before the first frame update
@@ -72,6 +73,7 @@ public class Concurso : MonoBehaviour
 
     public void TratarRespuestas()
     {
+        unAcierto = false;
         //En datosRespuestas tenemos todas las respuestas correctas de los jugadores.
         if(GeneralController.resuelto == false)
         {
@@ -123,7 +125,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(player01.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player01")
                 {
@@ -145,7 +149,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(iTurnoActual=="Player01")
                 {
@@ -174,7 +180,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(player02.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player02")
                 {
@@ -196,7 +204,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
 
                 }
                 else if(iTurnoActual=="Player02")
@@ -226,7 +236,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(player03.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player03")
                 {
@@ -248,7 +260,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(iTurnoActual=="Player03")
                 {
@@ -278,7 +292,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(player04.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player04")
                 {
@@ -300,7 +316,9 @@ public class Concurso : MonoBehaviour
                         datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
                         cantidadProducto--;
                         datosRespuestas.Add(respuesta);
+                        unAcierto = true;
                     }
+                    
                 }
                 else if(iTurnoActual=="Player04")
                 {
@@ -326,6 +344,10 @@ public class Concurso : MonoBehaviour
                 }
             }
             
+            if(unAcierto == false) 
+            {
+                datosAlimentos.Where(p=>p.ID==ProductoActual).First().Unidades -=1;
+            }
         }
     }
 
