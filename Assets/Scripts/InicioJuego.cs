@@ -25,5 +25,7 @@ public class InicioJuego : MonoBehaviour
         //Debug.Log(OrdenInicial.numTienda);
         comienzo = true;
         ShoppingController.tituloGlobal.SetActive(false);
+        ShoppingController.logoJunta.SetActive(false);
+        ShoppingController.logoCooperativas.SetActive(false);
     }
 }

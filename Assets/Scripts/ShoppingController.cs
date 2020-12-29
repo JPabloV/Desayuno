@@ -16,6 +16,7 @@ public class ShoppingController : MonoBehaviour
     private string numTienda;
     private float speed = 200f;
     private GameObject del, campo, a, la, mesa, titulo01, titulo02, txcomenzar, logoEA, logoConocer;
+    public static GameObject logoJunta, logoCooperativas;
     private Text text;
     public static GameObject tituloGlobal;
     private Transform target;
@@ -56,6 +57,13 @@ public class ShoppingController : MonoBehaviour
         logoConocer.SetActive(false);
         tituloGlobal.SetActive(false);
 
+        logoJunta = GameObject.Find("Junta");
+        logoJunta.SetActive(false);
+
+        logoCooperativas = GameObject.Find("Cooperativas");
+        logoCooperativas.SetActive(false);
+        
+
         if(numTienda == "Inicio")
         {
             tituloGlobal.SetActive(true);
@@ -93,23 +101,6 @@ public class ShoppingController : MonoBehaviour
             posicion[3] = 140f;
             posicion[4] = 310f;
         }
-        /*else if(numTienda == "Tienda01")
-        {          
-           // añado las posiciones al vector
-            posicion = new float[5];
-            posicion[0] = 500f;
-            posicion[1] = 380f;
-            posicion[2] = 260f;
-            posicion[3] = 140f;
-            posicion[4] = 310f;
-                        
-            // reposiciono los jugadores de acuerdo a las posiciones aleatorias.
-            jugadores[0].GetComponent<Transform>().position = new Vector3(posicion[orden[0]], 200f, 0);
-            jugadores[1].GetComponent<Transform>().position = new Vector3(posicion[orden[1]], 200f, 0);
-            jugadores[2].GetComponent<Transform>().position = new Vector3(posicion[orden[2]], 200f, 0);
-            jugadores[3].GetComponent<Transform>().position = new Vector3(posicion[orden[3]], 200f, 0);
-            jugadores[4].GetComponent<Transform>().position = new Vector3(posicion[4], 200f, 0);
-        }*/
         else if(numTienda == "Tienda02")
         {
             posicion = new float[5];
@@ -229,6 +220,8 @@ public class ShoppingController : MonoBehaviour
             {   
                 logoEA.SetActive(true);
                 logoConocer.SetActive(true);
+                logoJunta.SetActive(true);
+                logoCooperativas.SetActive(true);
                 txcomenzar.SetActive(true);
                 text = GameObject.Find("txComenzar").GetComponent<Text>();
                 numTienda = "StandBy";

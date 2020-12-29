@@ -547,27 +547,6 @@ public class GeneralController : MonoBehaviour
     {
         SceneManager.LoadScene("OutTiendas");
     }
-    /*
-    public void conteoAcertantes()
-    {
-        if(player01.GetComponent<PlayerStats>().aciertoPlayer == true && whosTurn != "Player01")
-        {
-            numAcertantes += 1;
-        }
-        if(player02.GetComponent<PlayerStats>().aciertoPlayer == true && whosTurn != "Player02")
-        {
-            numAcertantes += 1;
-        }
-        if(player03.GetComponent<PlayerStats>().aciertoPlayer == true && whosTurn != "Player03")
-        {
-            numAcertantes += 1;
-        }
-        if(player04.GetComponent<PlayerStats>().aciertoPlayer == true && whosTurn != "Player04")
-        {
-            numAcertantes += 1;
-        }
-    }
-    */
 
     public void conteoAcertantes()
     {
