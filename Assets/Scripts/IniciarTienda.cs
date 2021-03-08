@@ -687,7 +687,7 @@ public class IniciarTienda : MonoBehaviour
             ID=7,
             IDAlimento = 5,
             IDTipoAlimento = 2,
-            Pregunta = "En Canarias se producen y de muy buena calidad. Sus manchitas oscuras son características.",
+            Pregunta = "En Canarias se producen plátanos de muy buena calidad. Sus manchitas oscuras son características.",
             Respuesta = true
         });        
 
@@ -774,7 +774,7 @@ public class IniciarTienda : MonoBehaviour
             ID=16,
             IDAlimento = 10,
             IDTipoAlimento = 3,
-            Pregunta = "Procede de América del Sur. Lo trajeron a Europa los conquistadores españoles y durante mucho tiempo se utilizó como planta ornamental.",
+            Pregunta = "El tomate procede de América del Sur, lo trajeron a Europa los conquistadores españoles y durante mucho tiempo se utilizó como planta ornamental.",
             Respuesta = true
         });                
 
@@ -793,7 +793,7 @@ public class IniciarTienda : MonoBehaviour
             ID=18,
             IDAlimento = 11,
             IDTipoAlimento = 3,
-            Pregunta = "Cuando se corta, se produce ácido sulfúrico que es lo que nos hace llorar los ojos.",
+            Pregunta = "Cuando se corta la cebolla se produce ácido sulfúrico que es lo que nos hace llorar los ojos.",
             Respuesta = true
         });                
 
@@ -859,7 +859,7 @@ public class IniciarTienda : MonoBehaviour
             ID=25,
             IDAlimento = 14,
             IDTipoAlimento = 1,
-            Pregunta = "Existen más de 4000 variedades en el mundo, de muchos colores y formas. Algunas tienen la carne azul y púrpura.",
+            Pregunta = "Existen más de 4000 variedades de patatas en el mundo, de muchos colores y formas. Algunas tienen la carne azul y púrpura.",
             Respuesta = true
         });                
 
@@ -911,7 +911,8 @@ public class IniciarTienda : MonoBehaviour
             ID=30,
             IDAlimento = 17,
             IDTipoAlimento = 4,
-            Pregunta = "En la sierra de Cádiz se produce un queso muy valorado con la leche de una cabra de raza autóctona: la cabra Payoya.",
+            // Pregunta = "En la sierra de Cádiz se produce un queso muy valorado con la leche de una cabra de raza autóctona: la cabra Payoya.",
+            Pregunta = "Algunos de los quesos más valorados en Andalucía se elaboran con leche de una cabra autóctona: la cabra malagueña.",
             Respuesta = true
         });            
 
@@ -924,7 +925,7 @@ public class IniciarTienda : MonoBehaviour
             Respuesta = false
         });            
 
-        // YOGURT
+        // YOGUR
         lista.Add(new Preguntas()
         {
             ID=32,
@@ -939,7 +940,7 @@ public class IniciarTienda : MonoBehaviour
             ID=33,
             IDAlimento = 18,
             IDTipoAlimento = 4,
-            Pregunta = "Los nutrientes del yogurt se asimilan y aprovechan mejor que los de la leche, gracias a la fermentación producida por unas bacterias.",
+            Pregunta = "Los nutrientes del yogur, se asimilan y aprovechan mejor que los de la leche, gracias a la fermentación producida por unas bacterias.",
             Respuesta = true
         });            
 
@@ -953,7 +954,7 @@ public class IniciarTienda : MonoBehaviour
             ID=34,
             IDAlimento = 19,
             IDTipoAlimento = 1,
-            Pregunta = "Los ingredientes principales son harina, agua, levadura y sal.",
+            Pregunta = "Los ingredientes principales del pan son harina, agua, levadura y sal.",
             Respuesta = true
         });
 
@@ -981,7 +982,7 @@ public class IniciarTienda : MonoBehaviour
             ID=37,
             IDAlimento = 20,
             IDTipoAlimento = 1,
-            Pregunta = "Mientras sea casero, puedes tomar todo el bizcocho que quieras.",
+            Pregunta = "Mientras sea casero, puedes tomar todo el bizcocho que quieras.",            
             Respuesta = false
         });
 
@@ -1009,7 +1010,7 @@ public class IniciarTienda : MonoBehaviour
             ID=40,
             IDAlimento = 21,
             IDTipoAlimento = 1,
-            Pregunta = "Como tienen un agujero en el centro, los donuts son más saludables que otros tipos de bollería, ya que estás comiendo aire.",
+            Pregunta = "Como tienen un agujero en el centro, los donuts son más saludables que otro tipo de bollería, ya que estás comiendo aire.",
             Respuesta = false
         });
 
@@ -1019,7 +1020,8 @@ public class IniciarTienda : MonoBehaviour
             ID=41,
             IDAlimento = 22,
             IDTipoAlimento = 1,
-            Pregunta = "Las galletas maría se crearon a finales del siglo XIX para celebrar la boda de unos príncipes.",
+            //Pregunta = "Las galletas maría se crearon a finales del siglo XIX para celebrar la boda de unos príncipes.",
+            Pregunta = "Los ingredientes básicos de las galletas son harina, azúcar y mantequilla.",
             Respuesta = true
         });
 
@@ -1166,7 +1168,7 @@ public class IniciarTienda : MonoBehaviour
             ID=56,
             IDAlimento = 29,
             IDTipoAlimento = 1,
-            Pregunta = "Era un alimento muy importante para los antiguos romanos. Incluso tenían su propio dios que se llamaba Panochus.",
+            Pregunta = "El maíz era un alimento muy importante para los antiguos romanos, incluso tenían su propio dios que se llamaba Panochus.",
             Respuesta = false
         });
 
@@ -1244,7 +1246,8 @@ public class IniciarTienda : MonoBehaviour
             ID=64,
             IDAlimento = 34,
             IDTipoAlimento = 1,
-            Pregunta = "Las almendras hay que comerlas con moderación porque son frutos secos y engordan mucho.",
+            //Pregunta = "Las almendras hay que comerlas con moderación porque son frutos secos y engordan mucho.",
+            Pregunta = "La almendra es un fruto seco que hay que evitar porque engorda muchísimo.",
             Respuesta = false
         });
 
@@ -1273,7 +1276,7 @@ public class IniciarTienda : MonoBehaviour
             ID=67,
             IDAlimento = 36,
             IDTipoAlimento = 2,
-            Pregunta = "La palabra 'mermelada' proviene del término portugués 'marmelada', cuyo significado es 'confitura de membrillo'.",
+            Pregunta = "La palabra mermelada proviene del término portugués 'marmelada', cuyo significado es 'confitura de membrillo'.",
             Respuesta = true
         });
 
@@ -1330,7 +1333,8 @@ public class IniciarTienda : MonoBehaviour
             ID=73,
             IDAlimento = 39,
             IDTipoAlimento = 5,
-            Pregunta = "Los cerdos pueden ser blancos o ibéricos.",
+            //Pregunta = "Los cerdos pueden ser blancos o ibéricos.",
+            Pregunta = "Los cerdos pueden ser de diferentes razas, una de ella es la ibérica.",
             Respuesta = true
         });
 
@@ -1376,7 +1380,7 @@ public class IniciarTienda : MonoBehaviour
             ID=78,
             IDAlimento = 40,
             IDTipoAlimento = 6,
-            Pregunta = "La caballa tiene muchas proteínas porque es la carne de las hembras de los caballos.",
+            Pregunta = "Una conserva de caballa en aceite tiene muchas proteínas porque es la carne de las hembras de los caballos.",
             Respuesta = false
         });
 
