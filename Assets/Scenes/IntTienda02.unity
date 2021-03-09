@@ -709,6 +709,7 @@ MonoBehaviour:
   plato02: {fileID: 0}
   plato03: {fileID: 0}
   plato04: {fileID: 0}
+  unAcierto: 0
 --- !u!222 &200462791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2816,8 +2817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1Bienvenidos a la fruter\xEDa y verduler\xEDa!\nPrimer cliente, \xBFQu\xE9
-    deseas?"
+  m_Text: "\xA1Bienvenidos a la fruter\xEDa!\nPrimer cliente, \xBFqu\xE9 desea?"
 --- !u!222 &785314338
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4656,7 +4656,7 @@ RectTransform:
   m_GameObject: {fileID: 1248256384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.25, z: 0.2}
   m_Children: []
   m_Father: {fileID: 665511418}
   m_RootOrder: 14
@@ -4686,7 +4686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3e229fb891556a146894fb473db315ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 575a9b1b00d45a141865b6b7b5dd8de3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

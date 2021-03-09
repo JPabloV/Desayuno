@@ -82,7 +82,7 @@ public class GeneralController : MonoBehaviour
 
         if(OrdenInicial.numTienda == "Tienda01")
         {
-            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "!Bienvenidos a la panadería y bollería! Primer cliente, ¿Qué deseas?";
+            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Bienvenidos a la panadería! Primer cliente, ¿qué desea?";
             GameObject.Find(OrdenInicial.playersOrder[0]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[1]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[2]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
@@ -91,7 +91,7 @@ public class GeneralController : MonoBehaviour
         }
         else if(OrdenInicial.numTienda == "Tienda02")
         {
-            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "!Bienvenidos a la frutería y verdulería! Primer cliente, ¿Qué deseas?";
+            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Bienvenidos a la frutería! Primer cliente, ¿qué desea?";
             GameObject.Find(OrdenInicial.playersOrder[1]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[2]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[3]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
@@ -100,7 +100,7 @@ public class GeneralController : MonoBehaviour
         }
         else if(OrdenInicial.numTienda == "Tienda03")
         {
-            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "!Bienvenidos a la lechería! Primer cliente, ¿Qué deseas?";
+            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Bienvenidos a la lechería! Primer cliente, ¿qué desea?";
             GameObject.Find(OrdenInicial.playersOrder[2]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[3]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[0]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
@@ -109,7 +109,7 @@ public class GeneralController : MonoBehaviour
         }
         if(OrdenInicial.numTienda == "Tienda04")
         {
-            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "!Bienvenidos a Variedades! Primer cliente, ¿Qué deseas?";
+            tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Bienvenidos a variedades! Primer cliente, ¿qué desea?";
             GameObject.Find(OrdenInicial.playersOrder[3]).GetComponent<Transform>().transform.position = new Vector3(90f, 630f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[0]).GetComponent<Transform>().transform.position = new Vector3(90f, 450f, 0f);
             GameObject.Find(OrdenInicial.playersOrder[1]).GetComponent<Transform>().transform.position = new Vector3(90f, 270f, 0f);
@@ -541,11 +541,6 @@ public class GeneralController : MonoBehaviour
             GeneralController.productSelected = false;
             SceneManager.LoadScene("OutTiendas");
         }
-    }
-
-    public void EmpezarGame()
-    {
-        SceneManager.LoadScene("OutTiendas");
     }
 
     public void conteoAcertantes()

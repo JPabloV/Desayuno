@@ -447,7 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 378e23328baa0c745a7b6ea754fe0f5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1b7e3f26be458e4d9874b03fcee5945, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2303,7 +2303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1Bienvenidos a la lecher\xEDa!\nPrimer cliente, \xBFQu\xE9 deseas?"
+  m_Text: "\xA1Bienvenidos a variedades! \nPrimer cliente, \xBFqu\xE9 desea?"
 --- !u!222 &401823970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4365,7 +4365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 40241cc04fa964e44bd6aff2c162dcf4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3378d36ac84439d48a441e47694260d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6764,6 +6764,7 @@ MonoBehaviour:
   plato02: {fileID: 0}
   plato03: {fileID: 0}
   plato04: {fileID: 0}
+  unAcierto: 0
 --- !u!114 &1589099864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6878,6 +6879,7 @@ MonoBehaviour:
   plato02: {fileID: 0}
   plato03: {fileID: 0}
   plato04: {fileID: 0}
+  unAcierto: 0
 --- !u!114 &1589099869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7043,7 +7045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 378e23328baa0c745a7b6ea754fe0f5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1b7e3f26be458e4d9874b03fcee5945, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

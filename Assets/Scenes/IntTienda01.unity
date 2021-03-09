@@ -5079,6 +5079,7 @@ MonoBehaviour:
   plato02: {fileID: 0}
   plato03: {fileID: 0}
   plato04: {fileID: 0}
+  unAcierto: 0
 --- !u!114 &2005676736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5812,8 +5813,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1Bienvenidos a la panader\xEDa y boller\xEDa!\nPrimer cliente, \xBFQu\xE9
-    deseas?"
+  m_Text: "\xA1Bienvenidos a la panader\xEDa!\nPrimer cliente, \xBFqu\xE9 desea? "
 --- !u!222 &2128326168
 CanvasRenderer:
   m_ObjectHideFlags: 0

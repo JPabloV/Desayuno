@@ -50,18 +50,18 @@ public class ShoppingController : MonoBehaviour
         txcomenzar = GameObject.Find("txComenzar");
         txcomenzar.SetActive(false);
 
-        logoEA = GameObject.Find("logoEA");
-        logoEA.SetActive(false);
+        // logoEA = GameObject.Find("logoEA");
+        // logoEA.SetActive(false);
 
-        logoConocer = GameObject.Find("logoConocer");
-        logoConocer.SetActive(false);
-        tituloGlobal.SetActive(false);
+        // logoConocer = GameObject.Find("logoConocer");
+        // logoConocer.SetActive(false);
+        // tituloGlobal.SetActive(false);
 
-        logoJunta = GameObject.Find("Junta");
-        logoJunta.SetActive(false);
+        // logoJunta = GameObject.Find("Junta");
+        // logoJunta.SetActive(false);
 
-        logoCooperativas = GameObject.Find("Cooperativas");
-        logoCooperativas.SetActive(false);
+        // logoCooperativas = GameObject.Find("Cooperativas");
+        // logoCooperativas.SetActive(false);
         
 
         if(numTienda == "Inicio")
@@ -218,10 +218,10 @@ public class ShoppingController : MonoBehaviour
             
             if(jugadores[0].transform.position == new Vector3(posicion[orden[0]], 200f, 0f) && numTienda == "Inicio")
             {   
-                logoEA.SetActive(true);
-                logoConocer.SetActive(true);
-                logoJunta.SetActive(true);
-                logoCooperativas.SetActive(true);
+                //logoEA.SetActive(true);
+                //logoConocer.SetActive(true);
+                //logoJunta.SetActive(true);
+                //logoCooperativas.SetActive(true);
                 txcomenzar.SetActive(true);
                 text = GameObject.Find("txComenzar").GetComponent<Text>();
                 numTienda = "StandBy";

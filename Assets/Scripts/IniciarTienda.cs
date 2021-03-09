@@ -311,7 +311,7 @@ public class IniciarTienda : MonoBehaviour
             Puntuacion = 4,
             Observaciones = @"Presentación en botella.",
             ImageSource = "Lacteos/leche",
-            IsAndaluz = true
+            IsAndaluz = false
         });
         lista.Add(new Alimento()
         {
@@ -339,7 +339,7 @@ public class IniciarTienda : MonoBehaviour
         {
             ID=18,
             IDTipoAlimento = 4,
-            Nombre = "Yogurt",
+            Nombre = "Yogur",
             Unidades = 2,
             Puntuacion = 4,
             Observaciones = string.Empty,
@@ -727,7 +727,7 @@ public class IniciarTienda : MonoBehaviour
             ID=11,
             IDAlimento = 8,
             IDTipoAlimento = 2,
-            Pregunta = "El mango es una fruta típica del norte de Europa. Neceista frío para crecer y dar fruto.",
+            Pregunta = "El mango es una fruta típica del norte de Europa. Necesita frío para crecer y dar fruto.",
             Respuesta = false
         });                
 
@@ -840,7 +840,7 @@ public class IniciarTienda : MonoBehaviour
             ID=23,
             IDAlimento = 13,
             IDTipoAlimento = 3,
-            Pregunta = "Existen zanahorias blancas, amarillas y purpuras.",
+            Pregunta = "Existen zanahorias blancas, amarillas y púrpuras.",
             Respuesta = true
         });                
 
@@ -963,7 +963,7 @@ public class IniciarTienda : MonoBehaviour
             ID=35,
             IDAlimento = 19,
             IDTipoAlimento = 1,
-            Pregunta = "El pan nos aporta principalmente proteinas.",
+            Pregunta = "El pan nos aporta principalmente proteínas.",
             Respuesta = false
         });
 

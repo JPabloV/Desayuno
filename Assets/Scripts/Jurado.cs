@@ -121,7 +121,7 @@ public class Jurado : MonoBehaviour
         // MENSAJE INICIAL JUEZ
         //---------------------
 
-        juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Veamos vuestros desayunos! Primer consursante, elije tus ingredientes.";
+        juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Veamos vuestros desayunos! Primer consursante, elige como máximo seis ingredientes.";
 
         //--------------------------
         // ESTABLECE LE PRIMER TURNO
@@ -540,21 +540,21 @@ public class Jurado : MonoBehaviour
         {
             whosTurn = "Player02";
             Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Segundo consursante, elije tus ingredientes.";
+            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Segundo consursante, elige como máximo seis ingredientes.";
             pintarProductos(2);
         }
         else if(whosTurn == "Player02")
         {
             whosTurn = "Player03";
             Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Tercer consursante, elije tus ingredientes.";
+            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Tercer consursante, elige como máximo seis ingredientes.";
             pintarProductos(3);
         }
         else if(whosTurn == "Player03")
         {
             whosTurn = "Player04";
             Turning();
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Cuarto consursante, elije tus ingredientes.";
+            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Cuarto consursante, elige como máximo seis ingredientes.";
             pintarProductos(4);
         }
         else if(whosTurn == "Player04")
