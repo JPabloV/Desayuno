@@ -127,7 +127,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_interna");
+                    GeneralController.qtplayer01.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(player01.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player01")
                 {
@@ -151,6 +153,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_interna");
+                    GeneralController.qtplayer01.GetComponent<Image>().sprite = mySprite;
                     
                 }
                 else if(iTurnoActual=="Player01")
@@ -182,7 +187,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_rubio");
+                    GeneralController.qtplayer02.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(player02.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player02")
                 {
@@ -206,7 +213,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_rubio");
+                    GeneralController.qtplayer02.GetComponent<Image>().sprite = mySprite;
 
                 }
                 else if(iTurnoActual=="Player02")
@@ -238,7 +247,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_guapilla");
+                    GeneralController.qtplayer03.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(player03.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player03")
                 {
@@ -262,7 +273,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_guapilla");
+                    GeneralController.qtplayer03.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(iTurnoActual=="Player03")
                 {
@@ -294,7 +307,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_modernillo");
+                    GeneralController.qtplayer04.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(player04.GetComponent<PlayerStats>().responsePlayer==false && !response && iTurnoActual=="Player04")
                 {
@@ -318,7 +333,9 @@ public class Concurso : MonoBehaviour
                         datosRespuestas.Add(respuesta);
                         unAcierto = true;
                     }
-                    
+                    //Cambiamos la imagen del acierto
+                    Sprite mySprite = Resources.Load<Sprite>("Personajes/win_modernillo");
+                    GeneralController.qtplayer04.GetComponent<Image>().sprite = mySprite;
                 }
                 else if(iTurnoActual=="Player04")
                 {

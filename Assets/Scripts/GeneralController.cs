@@ -455,6 +455,7 @@ public class GeneralController : MonoBehaviour
             qtplayer03.GetComponent<PlayerGeneralController>().RestartQuestionBox();
             qtplayer04.GetComponent<PlayerGeneralController>().RestartQuestionBox();
             btResolver.transform.GetChild(0).GetComponent<Text>().text = "Resolver";
+            restablecerImagesPlayers();
             btResolver.SetActive(false);
             questionBox.SetActive(false);
             conteoAcertantes();
@@ -505,6 +506,21 @@ public class GeneralController : MonoBehaviour
             //target.GetComponent<Transform>().position = new Vector3(231f, 90f, 0f);
             target.position = plato04.transform.position;
         }
+    }
+    private void restablecerImagesPlayers()
+    {
+        //Interna
+        Sprite mySprite = Resources.Load<Sprite>("Personajes/interna");
+        GeneralController.qtplayer01.GetComponent<Image>().sprite = mySprite;
+        //Rubio
+        mySprite = Resources.Load<Sprite>("Personajes/rubio");
+        GeneralController.qtplayer02.GetComponent<Image>().sprite = mySprite;
+        //Guapilla
+        mySprite = Resources.Load<Sprite>("Personajes/guapilla");
+        GeneralController.qtplayer03.GetComponent<Image>().sprite = mySprite;
+        //Modernillo
+        mySprite = Resources.Load<Sprite>("Personajes/moderno");
+        GeneralController.qtplayer04.GetComponent<Image>().sprite = mySprite;
     }
 
     private IEnumerator Despedida()

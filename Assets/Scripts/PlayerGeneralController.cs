@@ -62,4 +62,5 @@ public class PlayerGeneralController : MonoBehaviour
         btTrue.GetComponent<Image>().sprite = vNormal;
         btFalse.GetComponent<Image>().sprite = xNormal;
     }
+    
 }
