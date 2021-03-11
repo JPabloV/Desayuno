@@ -33,4 +33,11 @@ public class InicioJuego : MonoBehaviour
     {
         SceneManager.LoadScene("OutTiendas");
     }
+
+    public void RestartGame()
+    {
+        OrdenInicial.numTienda = "Inicio";
+        SceneManager.LoadScene("Inicio");
+        OrdenInicial.playersOrder = new List<string>();
+    }
 }

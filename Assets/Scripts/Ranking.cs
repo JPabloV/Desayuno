@@ -142,11 +142,9 @@ public class Ranking : MonoBehaviour
         GameObject.Find("btFinalizar").SetActive(false);
     }
 
-    public void RestartGame()
+    public void SceneFinal()
     {
-        OrdenInicial.numTienda = "Inicio";
-        SceneManager.LoadScene("Inicio");
-        OrdenInicial.playersOrder = new List<string>();
+        SceneManager.LoadScene("final");
     }
 
 
