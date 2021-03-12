@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ranking.unity
     guid: 92a04731d5826c143adc1fe4b6366644
+  - enabled: 1
+    path: Assets/Scenes/final.unity
+    guid: 7dab1df7e324a5a4ca0b4d1333516241
   m_configObjects: {}
