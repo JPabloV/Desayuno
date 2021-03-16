@@ -85,7 +85,7 @@ public class Ranking : MonoBehaviour
                 imageCambiar.sprite = mySprite;
                 imageCambiar.SetNativeSize(); // redimensiona la imagen con el height y el width del sprite que incluye
 
-                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "sandia")
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -120,6 +120,10 @@ public class Ranking : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
+                else if(imageCambiar.sprite.name == "jamon")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.18f, 0.2f);
+                }
                 else
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
@@ -139,7 +143,26 @@ public class Ranking : MonoBehaviour
     public void Ganador()
     {
         winningBox.SetActive(true);
-        GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = GameObject.Find(Order[3].name).GetComponent<Image>().sprite;
+        string nameSprite = string.Empty;
+        //control del jugador
+        switch(Order[3].name.ToLower())
+        {
+            case "player01":
+                nameSprite = "interna_winner";
+            break;
+            case "player02":
+            nameSprite = "rubio_winner";
+            break;
+            case "player03":
+            nameSprite = "guapilla_winner";
+            break;
+            case "player04":
+            nameSprite = "moderno_winner";
+            break;
+        }
+        Sprite winnerSprite = Resources.Load<Sprite>("Personajes/" + nameSprite);
+        //GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = GameObject.Find(Order[3].name+"_winner").GetComponent<Image>().sprite;
+        GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = winnerSprite;
         GameObject.Find("btFinalizar").SetActive(false);
     }
 

@@ -254,8 +254,7 @@ public class Jurado : MonoBehaviour
             // más o menos adecuado, ya que alguos estan pintados con una resolución más grande que otros, y si la escala
             // es la misma salen muy descompensados. Aquí las reescalo a las escalas que había usado en las tiendas para
             // cada producto. Faltan los que aún no tenemos sprite, que por defecto se están reescalando en el "else"
-                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" 
-                ||  imageCambiar.sprite.name == "sandia")
+                if(imageCambiar.sprite.name == "conservas" ||  imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -270,16 +269,16 @@ public class Jurado : MonoBehaviour
                 else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
                 imageCambiar.sprite.name == "aceite de oliva" || imageCambiar.sprite.name == "rosquillas" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
-                imageCambiar.sprite.name == "garbanzos")
+                imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "galletas_0")
                 {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
-                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas_0" || imageCambiar.sprite.name == "croisant_0" ||
-                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
+                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "croisant_0" ||
+                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
                 }
-                else if (imageCambiar.sprite.name == "almendras" || imageCambiar.sprite.name == "arandanos")
+                else if (imageCambiar.sprite.name == "almendras" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "harina")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
@@ -290,6 +289,10 @@ public class Jurado : MonoBehaviour
                 else if(imageCambiar.sprite.name == "mermelada")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+                else if(imageCambiar.sprite.name == "jamon")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.18f, 0.2f);
                 }
                 else
                 {
@@ -478,12 +481,13 @@ public class Jurado : MonoBehaviour
     // Este método se activa al pulsar el botón "Listo" (objeto btListo)
     public void GuardarReceta()
     {
+        Alimento resul = null;
         GeneralController.turnSpin = false;
         btListo.SetActive(false);
         recetaBox.SetActive(true);
         //Controlamos quien tiene el turno
         var result = new List<Alimento>();
-        int randomInt = UnityEngine.Random.Range(0, 10);
+        int randomInt = UnityEngine.Random.Range(0, 13);
         int productAndaluzBorrar = 0;
         if(datosRespuestas!=null)
         {
@@ -509,8 +513,16 @@ public class Jurado : MonoBehaviour
             result = AlimentosAndalucesReceta;
         }
         
-        productAndaluzBorrar = result[randomInt].ID;
-        var resul = result[randomInt];
+        try
+        {
+            productAndaluzBorrar = result[randomInt].ID;
+            resul = result[randomInt];
+        }
+        catch
+        {
+            resul = result[0];
+        }
+        
         // GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
         //                         + " que es otro producto andaluz por excelencia y haber aumentado tu puntación"; 
         GameObject.Find("RecetaText").GetComponent<Text>().text = @"!Enhorabuena! Has elegido unos productos muy saludables, pero para mejorar tu desayuno te proponemos, " + resul.Nombre.ToLower()
@@ -532,7 +544,6 @@ public class Jurado : MonoBehaviour
         {
             imageReceta.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
-        
 
         //Borramos el alimento Andaluz
         AlimentosAndalucesReceta.RemoveAll(a=>a.ID == productAndaluzBorrar);
