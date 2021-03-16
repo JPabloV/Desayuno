@@ -63,21 +63,29 @@ public class ProductoReceta : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Jurado.productsInPlate.Add(this.gameObject.name);
-        
-        if(productSelected == false && inPlate == false) // Controla que el Target exista y que no haya ningún producto seleccionado para activar el movimiento 
+        if(iterante<6)
         {
-            target = targets[iterante];
-            productoEscogido = this.gameObject.name;
-            ProductoTag = this.gameObject.tag;
-            enableMove = true; // Activa el movimiento del producto seleccionado
-            productSelected = true; // cambia la variable productSelected del GeneralController a true
-            Jurado.AñadirProductoReceta(this.IDPlayer, this.IDProducto);
-        } 
+            Jurado.productsInPlate.Add(this.gameObject.name);
+        
+            if(productSelected == false && inPlate == false) // Controla que el Target exista y que no haya ningún producto seleccionado para activar el movimiento 
+            {
+                target = targets[iterante];
+                productoEscogido = this.gameObject.name;
+                ProductoTag = this.gameObject.tag;
+                enableMove = true; // Activa el movimiento del producto seleccionado
+                productSelected = true; // cambia la variable productSelected del GeneralController a true
+                Jurado.AñadirProductoReceta(this.IDPlayer, this.IDProducto);
+            } 
+            else
+            {
+                Debug.Log("Espera a colocar el producto anterior en el plato"); // Mero aviso de que ya has seleccionado un objeto y no puedes seleccionar otro. Lo puse como comprobación de que funcionaba. Podremos borrarlo.
+            }
+        }
         else
         {
-            Debug.Log("Espera a colocar el producto anterior en el plato"); // Mero aviso de que ya has seleccionado un objeto y no puedes seleccionar otro. Lo puse como comprobación de que funcionaba. Podremos borrarlo.
+            Debug.Log("No puedes introducir más alimentos, el límite son seis productos.");
         }
+                
     }     
     
     public void MoveSelected() // controla la translación y la rotación del producto seleccionado hacia el plato de harvard

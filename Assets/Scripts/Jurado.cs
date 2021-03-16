@@ -285,7 +285,7 @@ public class Jurado : MonoBehaviour
                 }
                 else if (imageCambiar.sprite.name == "azucar")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
                 else
                 {
@@ -505,8 +505,10 @@ public class Jurado : MonoBehaviour
         }
         
         var resul = result[randomInt];
-        GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
-                                + " que es otro producto andaluz por excelencia y haber aumentado tu puntación";       
+        // GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
+        //                         + " que es otro producto andaluz por excelencia y haber aumentado tu puntación"; 
+        GameObject.Find("RecetaText").GetComponent<Text>().text = @"!Enhorabuena! Has elegido unos productos muy saludables, pero para mejorar tu desayuno te proponemos, " + resul.Nombre.ToLower()
+                                   + " que es otro producto andaluz por excelencia y habrías aumentado tu puntación";       
         //Cambiamos la imagen.
         Sprite mySprite = Resources.Load<Sprite>(resul.ImageSource);                    
         Image imageReceta = GameObject.Find("ImageReceta").GetComponent<Image>();

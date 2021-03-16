@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class GeneralController : MonoBehaviour
 {
     public static bool productSelected = false; // controla que no haya un producto seleccionado. Si es true "desactiva" el OnMouseDown del script Producto
-    public static GameObject questionBox; // el GameObject de la ventana de preguntas
+    public static GameObject questionBox, PlatoHarvardBox; // el GameObject de la ventana de preguntas
     public static GameObject btTrue01, btFalse01, btTrue02, btFalse02, btTrue03, btFalse03, btTrue04, btFalse04; // los botones de verdadero y falso de cada uno de los jugadores
     public Sprite vNormal, vSelected, vRight, vWrong, xNormal, xSelected, xRight, xWrong; // Los sprites de los botones Verdadero y Falso en sus cuatro colores cada uno
     private GameObject player01, player02, player03, player04; // GameObjects de los jugadores
@@ -43,6 +43,7 @@ public class GeneralController : MonoBehaviour
         garbage = GameObject.Find("Garbage").GetComponent<Transform>();
         target = GameObject.Find("Target").GetComponent<Transform>(); // toma el transform del objeto Target, para saber donde debe moverse el producto seleccioando
         questionBox = GameObject.Find("QuestionBox"); // toma el GameObject de la ventana de preguntas
+        PlatoHarvardBox = GameObject.Find("PlatoHarvardBox"); // toma el GameObject de la ventana de preguntas
         btResolver = GameObject.Find("btResolver"); // toma el GameObject del botón para resolver la pregunta
                 
         // toman los GameObject de los jugadores de la QuestionBox
@@ -131,6 +132,7 @@ public class GeneralController : MonoBehaviour
 
         btResolver.SetActive(false); 
         questionBox.SetActive(false); 
+        PlatoHarvardBox.SetActive(false);
 
         // -----------------------
         // INICIAR EL PRIMER TURNO
@@ -577,6 +579,14 @@ public class GeneralController : MonoBehaviour
         {
             numAcertantes += 1;
         }
+    }
+    public void MostrarPlatoHarvard()
+    {
+        PlatoHarvardBox.SetActive(true);
+    }
+    public void OcultarPlatoHarvard()
+    {
+        PlatoHarvardBox.SetActive(false);
     }
 
 }

@@ -117,7 +117,7 @@ public class Ranking : MonoBehaviour
                 }
                 else if (imageCambiar.sprite.name == "azucar")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
                 else
                 {
