@@ -255,7 +255,7 @@ public class Jurado : MonoBehaviour
             // es la misma salen muy descompensados. Aquí las reescalo a las escalas que había usado en las tiendas para
             // cada producto. Faltan los que aún no tenemos sprite, que por defecto se están reescalando en el "else"
                 if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" 
-                || imageCambiar.sprite.name == "patatas" ||  imageCambiar.sprite.name == "sandia")
+                ||  imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -263,20 +263,19 @@ public class Jurado : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
                 }
-                else if(imageCambiar.sprite.name == "pan_1")
+                else if(imageCambiar.sprite.name == "pan_1" || imageCambiar.sprite.name == "patatas" )
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
                 } 
                 else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
-                imageCambiar.sprite.name == "miel" || imageCambiar.sprite.name == "aceite de oliva" || 
+                imageCambiar.sprite.name == "aceite de oliva" || imageCambiar.sprite.name == "rosquillas" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
-                imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
+                imageCambiar.sprite.name == "garbanzos")
                 {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
-                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas_0" ||
-                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "harina")
+                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas_0" || imageCambiar.sprite.name == "croisant_0" ||
+                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "harina" || imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
                 }
@@ -284,7 +283,7 @@ public class Jurado : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
-                else if (imageCambiar.sprite.name == "azucar")
+                else if (imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "miel")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }

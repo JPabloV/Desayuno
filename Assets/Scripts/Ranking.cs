@@ -85,7 +85,7 @@ public class Ranking : MonoBehaviour
                 imageCambiar.sprite = mySprite;
                 imageCambiar.SetNativeSize(); // redimensiona la imagen con el height y el width del sprite que incluye
 
-                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "sandia")
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -93,7 +93,7 @@ public class Ranking : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
                 }
-                else if(imageCambiar.sprite.name == "pan_1")
+                else if(imageCambiar.sprite.name == "pan_1" || imageCambiar.sprite.name == "patatas" )
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
                 } 
