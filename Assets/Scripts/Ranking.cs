@@ -17,12 +17,14 @@ public class Ranking : MonoBehaviour
     public GameObject[] Order;
     private int x = 0;
     private List<Puntuacion> datosPuntuacionFinal;
-    private GameObject winningBox;
+    private GameObject winningBox, AndaluzBox;
         
     // Start is called before the first frame update
     void Start()
     {
         winningBox = GameObject.Find("WinningBox");
+        AndaluzBox = GameObject.Find("AndaluzBox");
+        AndaluzBox.SetActive(false);
         winningBox.SetActive(false);
         datosPuntuacionFinal = Jurado.ObtenerPuntuacion();
 
@@ -83,41 +85,40 @@ public class Ranking : MonoBehaviour
                 imageCambiar.sprite = mySprite;
                 imageCambiar.SetNativeSize(); // redimensiona la imagen con el height y el width del sprite que incluye
 
-                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
-                imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
-                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
-                imageCambiar.sprite.name == "huevo")
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || imageCambiar.sprite.name == "patatas" || imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
-                else if(imageCambiar.sprite.name == "huevo" || imageCambiar.sprite.name == "harina")
+                else if(imageCambiar.sprite.name == "huevo")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.05f, 0.05f, 0.05f);
                 }
                 else if(imageCambiar.sprite.name == "pan_1")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.11f, 0.11f, 0.11f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
                 } 
-                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "miel" || 
-                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
+                else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "aceite de oliva" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
-                imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "queso"  
-                || imageCambiar.sprite.name == "manzana")
+                imageCambiar.sprite.name == "garbanzos" || imageCambiar.sprite.name == "manzana")
                 {
-                imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
-                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas" || imageCambiar.sprite.name == "croisant_0"
-                || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "yogur")
+                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas_0" || imageCambiar.sprite.name == "croisant_0"
+                || imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "filete" || imageCambiar.sprite.name == "queso")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.4f);
                 }
-                else if (imageCambiar.sprite.name == "almendras")
+                else if (imageCambiar.sprite.name == "almendras" || imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "harina" )
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
-                else if (imageCambiar.sprite.name == "azucar")
+                else if (imageCambiar.sprite.name == "azucar" || imageCambiar.sprite.name == "yogur" || imageCambiar.sprite.name == "miel")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                }
+                else if(imageCambiar.sprite.name == "mermelada")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
                 else
                 {
@@ -146,6 +147,12 @@ public class Ranking : MonoBehaviour
     {
         SceneManager.LoadScene("final");
     }
-
-
+    public void MostrarProductosAndaluces()
+    {
+        AndaluzBox.SetActive(true);
+    }
+    public void OcultarProductosAndaluces()
+    {
+        AndaluzBox.SetActive(false);
+    }
 }

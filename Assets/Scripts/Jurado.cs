@@ -142,8 +142,12 @@ public class Jurado : MonoBehaviour
         puntacionPlayer2 = Concurso4.puntacionPlayer2;
         puntacionPlayer3 = Concurso4.puntacionPlayer3;
         puntacionPlayer4 = Concurso4.puntacionPlayer4;
-        AlimentosAndaluces = Concurso.datosAlimentos.Where(a=>a.IsAndaluz==true).ToList();
-        AlimentosAndalucesReceta = Concurso.datosAlimentos.Where(a=>a.IsAndaluz==true).ToList();;
+        if (Concurso.datosAlimentos!=null)
+        {
+            AlimentosAndaluces = Concurso.datosAlimentos.Where(a=>a.IsAndaluz==true).ToList();
+            AlimentosAndalucesReceta = Concurso.datosAlimentos.Where(a=>a.IsAndaluz==true).ToList();
+        }
+        
 
         //----------------------------
         // CAMBIO DE PLATOS DE HARVARD
@@ -250,10 +254,8 @@ public class Jurado : MonoBehaviour
             // más o menos adecuado, ya que alguos estan pintados con una resolución más grande que otros, y si la escala
             // es la misma salen muy descompensados. Aquí las reescalo a las escalas que había usado en las tiendas para
             // cada producto. Faltan los que aún no tenemos sprite, que por defecto se están reescalando en el "else"
-            if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" || 
-                imageCambiar.sprite.name == "arandanos" || imageCambiar.sprite.name == "patatas" || 
-                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "sandia" || 
-                imageCambiar.sprite.name == "huevo")
+                if(imageCambiar.sprite.name == "conservas" || imageCambiar.sprite.name == "jamon" 
+                || imageCambiar.sprite.name == "patatas" ||  imageCambiar.sprite.name == "sandia")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 }
@@ -263,29 +265,32 @@ public class Jurado : MonoBehaviour
                 }
                 else if(imageCambiar.sprite.name == "pan_1")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
                 } 
                 else if(imageCambiar.sprite.name == "pollo" || imageCambiar.sprite.name == "filete" || 
-                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "miel" || 
-                imageCambiar.sprite.name == "mermelada" || imageCambiar.sprite.name == "aceite de oliva" || 
+                imageCambiar.sprite.name == "miel" || imageCambiar.sprite.name == "aceite de oliva" || 
                 imageCambiar.sprite.name == "arroz_stewart" || imageCambiar.sprite.name == "pasta" || 
                 imageCambiar.sprite.name == "croisant_0" || imageCambiar.sprite.name == "garbanzos" || 
-                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur" ||
-                imageCambiar.sprite.name == "harina")
+                imageCambiar.sprite.name == "queso" || imageCambiar.sprite.name == "yogur")
                 {
                 imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0.3f);
                 } 
-                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas")
+                else if (imageCambiar.sprite.name == "maiz" || imageCambiar.sprite.name == "galletas_0" ||
+                imageCambiar.sprite.name == "mantequilla" || imageCambiar.sprite.name == "harina")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 0.42f);
                 }
-                else if (imageCambiar.sprite.name == "almendras")
+                else if (imageCambiar.sprite.name == "almendras" || imageCambiar.sprite.name == "arandanos")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
                 else if (imageCambiar.sprite.name == "azucar")
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                }
+                else if(imageCambiar.sprite.name == "mermelada")
+                {
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
                 else
                 {
@@ -480,6 +485,7 @@ public class Jurado : MonoBehaviour
         //Controlamos quien tiene el turno
         var result = new List<Alimento>();
         int randomInt = UnityEngine.Random.Range(0, 10);
+        int productAndaluzBorrar = 0;
         if(datosRespuestas!=null)
         {
             if(whosTurn == "Player01")
@@ -504,6 +510,7 @@ public class Jurado : MonoBehaviour
             result = AlimentosAndalucesReceta;
         }
         
+        productAndaluzBorrar = result[randomInt].ID;
         var resul = result[randomInt];
         // GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
         //                         + " que es otro producto andaluz por excelencia y haber aumentado tu puntación"; 
@@ -518,6 +525,10 @@ public class Jurado : MonoBehaviour
         {
             imageReceta.GetComponent<Transform>().localScale = new Vector3(0.12f, 0.12f, 0.12f);
         } 
+        else if(imageReceta.sprite.name == "jamon")
+        {
+            imageReceta.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        } 
         else
         {
             imageReceta.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -525,7 +536,7 @@ public class Jurado : MonoBehaviour
         
 
         //Borramos el alimento Andaluz
-        AlimentosAndalucesReceta.RemoveAll(a=>a.ID == randomInt);
+        AlimentosAndalucesReceta.RemoveAll(a=>a.ID == productAndaluzBorrar);
         juez.transform.GetChild(0).gameObject.SetActive(false);
 
     }
