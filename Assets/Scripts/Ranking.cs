@@ -23,8 +23,6 @@ public class Ranking : MonoBehaviour
     void Start()
     {
         winningBox = GameObject.Find("WinningBox");
-        AndaluzBox = GameObject.Find("AndaluzBox");
-        AndaluzBox.SetActive(false);
         winningBox.SetActive(false);
         datosPuntuacionFinal = Jurado.ObtenerPuntuacion();
 
@@ -170,12 +168,5 @@ public class Ranking : MonoBehaviour
     {
         SceneManager.LoadScene("final");
     }
-    public void MostrarProductosAndaluces()
-    {
-        AndaluzBox.SetActive(true);
-    }
-    public void OcultarProductosAndaluces()
-    {
-        AndaluzBox.SetActive(false);
-    }
+   
 }

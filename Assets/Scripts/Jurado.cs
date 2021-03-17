@@ -24,7 +24,7 @@ public class Jurado : MonoBehaviour
     public GameObject juez;
     public static string whosTurn;
     public static GameObject btListo;
-    private GameObject recetaBox;   
+    private GameObject recetaBox, andaluzBox;   
     public static List<string> productsInPlate;
     public static List<Alimento> AlimentosAndaluces, AlimentosAndalucesReceta;
     private float estProd1x, estProd2x, estProd3x, estProd4x, estProd5x, estProd6x, estProd7x, estProd8x, estProd9x, estProd10x, estProd11x, estProd12x, estProd13x, estProd14x, estProd15x, estProd16x;
@@ -94,6 +94,9 @@ public class Jurado : MonoBehaviour
         
         recetaBox = GameObject.Find("RecetaBox");
         recetaBox.SetActive(false);
+
+        andaluzBox = GameObject.Find("AndaluzBox");
+        andaluzBox.SetActive(false);
 
         //-------------------
         // ORDEN DE JUGADORES
@@ -298,6 +301,14 @@ public class Jurado : MonoBehaviour
                 {
                     imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
+
+                //Colocamos los producto más arriba
+                float AltoImagen = imageCambiar.GetComponent<RectTransform>() .sizeDelta.y;
+                if(AltoImagen>400)
+                {
+                    imageCambiar.GetComponent<Transform>().position = new Vector3(imageCambiar.GetComponent<Transform>().position.x, imageCambiar.GetComponent<Transform>().position.y + 24, imageCambiar.GetComponent<Transform>().position.z);
+                }
+                
         }
         catch(Exception e)
         {
@@ -688,6 +699,15 @@ public class Jurado : MonoBehaviour
                 GameObject.Find(product).transform.position = new Vector3(estProd16x, estProd16y, 0f);
                 GameObject.Find(product).GetComponent<ProductoReceta>().inPlate = false;
             }
+
         }
+    }
+    public void MostrarProductosAndaluces()
+    {
+        andaluzBox.SetActive(true);
+    }
+    public void OcultarProductosAndaluces()
+    {
+        andaluzBox.SetActive(false);
     }
  }
