@@ -15,9 +15,10 @@ public class ShoppingController : MonoBehaviour
     public int[] orden; // Este vector contendrá los numeros de 0 a 3 de forma aleatoria
     private string numTienda;
     private float speed = 200f;
-    private GameObject del, campo, a, la, mesa, titulo01, titulo02, txcomenzar, logoEA, logoConocer;
+    private GameObject del, campo, a, la, mesa, titulo01, titulo02, txcomenzar, logoEA, logoConocer, JugarImage;
     public static GameObject logoJunta, logoCooperativas;
     private Text text;
+    private Image imageJugar;
     public static GameObject tituloGlobal;
     private Transform target;
   
@@ -48,7 +49,9 @@ public class ShoppingController : MonoBehaviour
         titulo02.SetActive(false);
 
         txcomenzar = GameObject.Find("txComenzar");
+        JugarImage = GameObject.Find("JugarImage");
         txcomenzar.SetActive(false);
+        JugarImage.SetActive(false);
 
         // logoEA = GameObject.Find("logoEA");
         // logoEA.SetActive(false);
@@ -222,8 +225,11 @@ public class ShoppingController : MonoBehaviour
                 //logoConocer.SetActive(true);
                 //logoJunta.SetActive(true);
                 //logoCooperativas.SetActive(true);
-                txcomenzar.SetActive(true);
-                text = GameObject.Find("txComenzar").GetComponent<Text>();
+                txcomenzar.SetActive(false);
+                JugarImage.SetActive(true);
+
+                text = txcomenzar.GetComponent<Text>();
+                imageJugar = JugarImage.GetComponent<Image>();
                 numTienda = "StandBy";
                 StartCoroutine(Inicio());
             }
@@ -238,9 +244,11 @@ public class ShoppingController : MonoBehaviour
     IEnumerator Inicio()
     {
         yield return new WaitForSeconds(0.5f);
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
+        //text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
+        imageJugar.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
         yield return new WaitForSeconds(0.5f);
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 1f);
+        //text.color = new Color(text.color.r, text.color.g, text.color.b, 1f);
+        imageJugar.color = new Color(text.color.r, text.color.g, text.color.b, 1f);
         numTienda = "Inicio";
     }
 

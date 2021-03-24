@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 200462790}
   - component: {fileID: 200462791}
   - component: {fileID: 200462785}
+  - component: {fileID: 200462792}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -721,6 +722,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200462784}
   m_CullTransparentMesh: 0
+--- !u!114 &200462792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200462784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f753b47c3712284794f8b4440879626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  office_Stamp: {fileID: 0}
 --- !u!1 &219399781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,6 +3060,18 @@ PrefabInstance:
       value: btPlatoHarvard 1
       objectReference: {fileID: 0}
     - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 110824984}
@@ -3050,11 +3079,80 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MostrarPlatoHarvard
       objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 200462792}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CursorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMouseEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].eventID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 200462792}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CursorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMouseExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].eventID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1982267034227180987, guid: 226183ded4975604db694279f6da60b6, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d726f68c7b288e64ca097248e8160187, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 6281706414551589947, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 110824984}
+    - target: {fileID: 6281706414551589947, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 200462792}
+    - target: {fileID: 6281706414551589947, guid: 226183ded4975604db694279f6da60b6, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 200462792}
+    m_RemovedComponents:
+    - {fileID: 1982267034227180986, guid: 226183ded4975604db694279f6da60b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 226183ded4975604db694279f6da60b6, type: 3}
 --- !u!1 &880558615
 GameObject:
@@ -4880,7 +4978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 429, y: -131}
+  m_AnchoredPosition: {x: 430, y: -124.5}
   m_SizeDelta: {x: 327, y: 319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248256386

@@ -17,13 +17,15 @@ public class Ranking : MonoBehaviour
     public GameObject[] Order;
     private int x = 0;
     private List<Puntuacion> datosPuntuacionFinal;
-    private GameObject winningBox, AndaluzBox;
+    private GameObject winningBox, winningBox2, AndaluzBox;
         
     // Start is called before the first frame update
     void Start()
     {
         winningBox = GameObject.Find("WinningBox");
+        winningBox2 = GameObject.Find("WinningBox2");
         winningBox.SetActive(false);
+        winningBox2.SetActive(false);
         datosPuntuacionFinal = Jurado.ObtenerPuntuacion();
 
         //-------------------
@@ -116,7 +118,7 @@ public class Ranking : MonoBehaviour
                 }
                 else if(imageCambiar.sprite.name == "mermelada")
                 {
-                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    imageCambiar.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
                 }
                 else if(imageCambiar.sprite.name == "jamon")
                 {
@@ -140,28 +142,78 @@ public class Ranking : MonoBehaviour
 
     public void Ganador()
     {
-        winningBox.SetActive(true);
-        string nameSprite = string.Empty;
-        //control del jugador
-        switch(Order[3].name.ToLower())
+        var listaJugadores = datosPuntuacionFinal.OrderBy(p=>p.PuntuacionFinal).ToList();
+        //Comprobar que los dos primeros no tienen la misma puntuacion
+        if (listaJugadores[3].PuntuacionFinal == listaJugadores[2].PuntuacionFinal)
         {
-            case "player01":
-                nameSprite = "interna_winner";
-            break;
-            case "player02":
-            nameSprite = "rubio_winner";
-            break;
-            case "player03":
-            nameSprite = "guapilla_winner";
-            break;
-            case "player04":
-            nameSprite = "moderno_winner";
-            break;
+            //Los dos primeros tienen los mismos puntos
+            winningBox2.SetActive(true);
+            string nameSprite1 = string.Empty;
+            string nameSprite2 = string.Empty;
+            //control del jugador
+            switch(Order[3].name.ToLower())
+            {
+                case "player01":
+                    nameSprite1 = "interna_winner";
+                break;
+                case "player02":
+                nameSprite1 = "rubio_winner";
+                break;
+                case "player03":
+                nameSprite1 = "guapilla_winner";
+                break;
+                case "player04":
+                nameSprite1 = "moderno_winner";
+                break;
+            }
+            switch(Order[2].name.ToLower())
+            {
+                case "player01":
+                    nameSprite2 = "interna_winner";
+                break;
+                case "player02":
+                nameSprite2 = "rubio_winner";
+                break;
+                case "player03":
+                nameSprite2 = "guapilla_winner";
+                break;
+                case "player04":
+                nameSprite2 = "moderno_winner";
+                break;
+            }
+            Sprite winnerSprite = Resources.Load<Sprite>("Personajes/" + nameSprite1);
+            Sprite winnerSprite2 = Resources.Load<Sprite>("Personajes/" + nameSprite2);
+            //GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = GameObject.Find(Order[3].name+"_winner").GetComponent<Image>().sprite;
+            GameObject.Find("WinningPlayer2_1").GetComponent<Image>().sprite = winnerSprite;
+            GameObject.Find("WinningPlayer2_2").GetComponent<Image>().sprite = winnerSprite2;
+            GameObject.Find("btFinalizar").SetActive(false);
         }
-        Sprite winnerSprite = Resources.Load<Sprite>("Personajes/" + nameSprite);
-        //GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = GameObject.Find(Order[3].name+"_winner").GetComponent<Image>().sprite;
-        GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = winnerSprite;
-        GameObject.Find("btFinalizar").SetActive(false);
+        else
+        {
+            winningBox.SetActive(true);
+            string nameSprite = string.Empty;
+            //control del jugador
+            switch(Order[3].name.ToLower())
+            {
+                case "player01":
+                    nameSprite = "interna_winner";
+                break;
+                case "player02":
+                nameSprite = "rubio_winner";
+                break;
+                case "player03":
+                nameSprite = "guapilla_winner";
+                break;
+                case "player04":
+                nameSprite = "moderno_winner";
+                break;
+            }
+            Sprite winnerSprite = Resources.Load<Sprite>("Personajes/" + nameSprite);
+            //GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = GameObject.Find(Order[3].name+"_winner").GetComponent<Image>().sprite;
+            GameObject.Find("WinningPlayer").GetComponent<Image>().sprite = winnerSprite;
+            GameObject.Find("btFinalizar").SetActive(false);
+        }
+        
     }
 
     public void SceneFinal()

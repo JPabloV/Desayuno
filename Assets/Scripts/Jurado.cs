@@ -304,7 +304,7 @@ public class Jurado : MonoBehaviour
 
                 //Colocamos los producto más arriba
                 float AltoImagen = imageCambiar.GetComponent<RectTransform>() .sizeDelta.y;
-                if(AltoImagen>400)
+                if(AltoImagen>410 && !imageCambiar.sprite.name.Equals("huevo"))
                 {
                     imageCambiar.GetComponent<Transform>().position = new Vector3(imageCambiar.GetComponent<Transform>().position.x, imageCambiar.GetComponent<Transform>().position.y + 24, imageCambiar.GetComponent<Transform>().position.z);
                 }
