@@ -33,6 +33,9 @@ public class GeneralController : MonoBehaviour
     public GameObject plato01, plato02, plato03, plato04;
     public GameObject platos;
     public static GameObject[] leftovers;
+    public static GameObject btnSound;
+    public static bool playingSound;
+    public static GameObject Sound;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +48,10 @@ public class GeneralController : MonoBehaviour
         questionBox = GameObject.Find("QuestionBox"); // toma el GameObject de la ventana de preguntas
         PlatoHarvardBox = GameObject.Find("PlatoHarvardBox"); // toma el GameObject de la ventana de preguntas
         btResolver = GameObject.Find("btResolver"); // toma el GameObject del botón para resolver la pregunta
-                
+        btnSound = GameObject.Find("btnSound");
+        Sound = GameObject.Find("full_joyful_times");
+        playingSound = true; // Comienza sonando la música
+                        
         // toman los GameObject de los jugadores de la QuestionBox
         qtplayer01 = GameObject.Find("qtPlayer01");
         qtplayer02 = GameObject.Find("qtPlayer02");
@@ -587,6 +593,24 @@ public class GeneralController : MonoBehaviour
     public void OcultarPlatoHarvard()
     {
         PlatoHarvardBox.SetActive(false);
+    }
+
+    public void MutePlaySound()
+    {
+        if(Sound.gameObject.GetComponent<AudioSource>().isPlaying==true)
+        {
+            //Mute sound
+            Sprite mySprite = Resources.Load<Sprite>("mute-sound");
+            btnSound.GetComponent<Image>().sprite = mySprite;
+            Sound.gameObject.GetComponent<AudioSource>().Stop();
+        }
+        else
+        {
+            //Play sound
+            Sprite mySprite = Resources.Load<Sprite>("play-sound");
+            btnSound.GetComponent<Image>().sprite = mySprite;
+            Sound.gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 
 }
