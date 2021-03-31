@@ -12,4 +12,19 @@ public class Scape : MonoBehaviour
             Application.Quit();
         }
     }
+
+    public void Salir()
+    {
+        Debug.Log("Regresamos al inicio.");
+        InicioJuego inicio = new InicioJuego();
+        inicio.RestartGame();
+    }
+
+    public void SalirJuego()
+    {
+        Debug.Log("Salimos de la aplicación a través del botón.");
+        InicioJuego inicio = new InicioJuego();
+        Application.Quit();
+    }
+
 }
