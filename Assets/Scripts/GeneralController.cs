@@ -222,20 +222,28 @@ public class GeneralController : MonoBehaviour
         Debug.Log("El producto en juego es: " + Producto.ProductoTag);
         if(numAcertantes != 0)
         {
+            int virtualLeftovers = 0; // Esta "virtualLeftovers" contendrá el número de productos restantes después de que el jugador con turno se haya llevado o no el producto. 
             yield return new WaitForSeconds(0.3f);
-            if(GameObject.Find(whosTurn).GetComponent<PlayerStats>().aciertoPlayer == true)
+            leftovers = GameObject.FindGameObjectsWithTag(Producto.ProductoTag);
+
+            if(GameObject.Find(whosTurn).GetComponent<PlayerStats>().aciertoPlayer == true) 
             {   
                 Debug.Log("El jugador con turno ha acertado y se lleva el producto");
                 numAcertantes -= 1;
+                Debug.Log("¿Cuantos han acertado sin contar al jugador con turno: " + numAcertantes);
+                virtualLeftovers = leftovers.Length; // si el jugador con turno se lleva el producto, "virtualLeftovers" es igual al "leftovers.Length"
             }
             else
             {
-                Debug.Log("El jugador con turno NO ha acertado y se queda sin producto");
+                Debug.Log("El jugador con turno NO ha acertado. El primer acertante se lleva el producto");
+                numAcertantes -= 1;
+                Debug.Log("¿Cuantos han acertado sin contar al primer acertante: " + numAcertantes);
+                virtualLeftovers = leftovers.Length+1; // si el jugador con turno falla la pregunta, y su producto se lo lleva el siguiente acertante, virtualLeftovers es igual al leftovers.Length + 1. Puede parecer algo lioso, pero es la forma más sencilla de arreglarlo.
             }
-            leftovers = GameObject.FindGameObjectsWithTag(Producto.ProductoTag);
-            Debug.Log("¿Cuantos productos quedan?: " + leftovers.Length);
-            Debug.Log("¿Cuantos han acertado sin contar al jugador con turno?: " + numAcertantes);
-            if(leftovers.Length > numAcertantes)
+
+            Debug.Log("¿Cuantos productos quedan?: " + virtualLeftovers);
+
+            if(virtualLeftovers > numAcertantes)
             {
             
                 for(int i = 1; i <= numAcertantes; i++)
@@ -245,10 +253,10 @@ public class GeneralController : MonoBehaviour
                 }
             
             }
-            else if(leftovers.Length <= numAcertantes)
+            else if(virtualLeftovers <= numAcertantes)
             {
             
-                for(int i = 1; i <= leftovers.Length; i++)
+                for(int i = 1; i <= virtualLeftovers; i++)
                 {
                     yield return new WaitForSeconds(0.3f);
                     Destroy(GameObject.FindWithTag(Producto.ProductoTag));
@@ -259,7 +267,10 @@ public class GeneralController : MonoBehaviour
                 numAcertantes += 1;
             }
 
-           
+            if(GameObject.Find(whosTurn).GetComponent<PlayerStats>().aciertoPlayer == false) // Por último, si el jugador con turno fallo la pregunta, vuelvo a sumar 1 al número de acertantes (parece erróneo, pero es así)
+            {
+                numAcertantes = numAcertantes + 1;
+            }
         }
         StartCoroutine(RepartoPuntos());
         
@@ -287,7 +298,7 @@ public class GeneralController : MonoBehaviour
             }
             else
             {
-                limitante = leftovers.Length;
+                limitante = leftovers.Length+1;
             }
             if(limitante == 0 && GameObject.Find(acertante).GetComponent<PlayerStats>().aciertoPlayer == true)
             {
