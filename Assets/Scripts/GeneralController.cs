@@ -211,7 +211,7 @@ public class GeneralController : MonoBehaviour
                     Turning();
                 }
                 tendero.transform.GetChild(0).gameObject.SetActive(true);
-                tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Siguiente cliente, ¿Qué deseas?";
+                tendero.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "Siguiente cliente, ¿qué desea?";
                 cambioTurno = false; 
             }
         }

@@ -1981,7 +1981,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '!Veamos vuestros desayunos!'
+  m_Text: "\xA1Veamos vuestros desayunos!"
 --- !u!222 &401823970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5728,6 +5728,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c821c1f2e3a13214a96a892350669d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1662271104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 485030575166618858, guid: aa50a3f19a84425498d3af9be9ca47ce, type: 3}
+  m_PrefabInstance: {fileID: 1662271102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7fd4cb34c565e41aa862e05a4647b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1754552822
 GameObject:
   m_ObjectHideFlags: 0
@@ -7468,6 +7479,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: btnSound
       objectReference: {fileID: 0}
+    - target: {fileID: 4345018812386419096, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1662271104}
+    - target: {fileID: 4345018812386419096, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MutePlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345018812386419096, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ControlSound, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4345018812386419098, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7551,6 +7574,22 @@ PrefabInstance:
     - target: {fileID: 4345018812386419098, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345018812386419099, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1589099863}
+    - target: {fileID: 4345018812386419099, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMouseEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345018812386419099, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1589099863}
+    - target: {fileID: 4345018812386419099, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMouseExit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605f2b51dc1338e49927fe1f1bd719f3, type: 3}

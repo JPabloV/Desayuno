@@ -195,7 +195,7 @@ public class Jurado : MonoBehaviour
         }
         else //Un jugador no ha acertado nada de nada, saliese este mensaje y se activase el botón de "listo"
         {
-            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Vaya! Parece que no conseguiste ningún producto (pulsa <¡Listo> para continuar)";
+            juez.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = "¡Vaya! Parece que no conseguiste ningún producto (pulsa <¡Listo!> para continuar)";
             btListo.SetActive(true);
         }
         while(contador<=16)
@@ -536,8 +536,8 @@ public class Jurado : MonoBehaviour
         
         // GameObject.Find("RecetaText").GetComponent<Text>().text = @"Podrias haber añadido a tu lista de productos, " + resul.Nombre
         //                         + " que es otro producto andaluz por excelencia y haber aumentado tu puntación"; 
-        GameObject.Find("RecetaText").GetComponent<Text>().text = @"!Enhorabuena! Has elegido unos productos muy saludables, pero para mejorar tu desayuno te proponemos, " + resul.Nombre.ToLower()
-                                   + " que es otro producto andaluz por excelencia y habrías aumentado tu puntación";       
+        GameObject.Find("RecetaText").GetComponent<Text>().text = @"¡Enhorabuena! Has elegido unos productos muy saludables, pero para mejorar tu desayuno te proponemos " + resul.Nombre.ToLower()
+                                   + " que es otro producto andaluz y habrías aumentado tu puntación";       
         //Cambiamos la imagen.
         Sprite mySprite = Resources.Load<Sprite>(resul.ImageSource);                    
         Image imageReceta = GameObject.Find("ImageReceta").GetComponent<Image>();
