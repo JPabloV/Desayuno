@@ -35,7 +35,7 @@ public class Producto : MonoBehaviour
         plato03 = GameObject.Find("Plato03");
         plato04 = GameObject.Find("Plato04");
 
-        
+        GeneralController.productSelected = false;
 
     }
 

@@ -56,6 +56,9 @@ public class Concurso3 : MonoBehaviour
         plato02.GetComponent<PlatoStats>().RepintarPlatos(mostrarAlimentosConseguidos(2));
         plato03.GetComponent<PlatoStats>().RepintarPlatos(mostrarAlimentosConseguidos(3));
         plato04.GetComponent<PlatoStats>().RepintarPlatos(mostrarAlimentosConseguidos(4));
+
+        //Repintar jugadores preguntas
+        RepintarOrdenJugadoresPreguntas();
     }
 
     public void getTextPregunta(int iID)
@@ -378,6 +381,98 @@ public class Concurso3 : MonoBehaviour
     public List<Respuestas> mostrarAlimentosConseguidos(int iPlayer)
     {
         return datosRespuestas?.Where(pl=>pl.Player==iPlayer)?.ToList();
+    }
+
+    private void RepintarOrdenJugadoresPreguntas()
+    {
+        Vector3 temp;
+        //Pintado imagenes orden inicial
+        for (int i = 0; i < OrdenInicial.playersOrder.Count ; i++)
+        {
+            switch(OrdenInicial.playersOrder[i])
+            {
+                case "Player01":
+                    switch(i)
+                    {
+                        case 0:
+                        temp = new Vector3(GeneralController.qtplayer01.transform.position.x+400, GeneralController.qtplayer01.transform.position.y, 0.0f);
+                        GeneralController.qtplayer01.transform.position = temp;
+                        break;
+                        case 1:
+                        temp = new Vector3(GeneralController.qtplayer01.transform.position.x+600, GeneralController.qtplayer01.transform.position.y, 0.0f);
+                        GeneralController.qtplayer01.transform.position = temp;
+                        break;
+                        case 2:
+                        //posición inicial
+                        break;
+                        case 3:
+                        temp = new Vector3(GeneralController.qtplayer01.transform.position.x+200, GeneralController.qtplayer01.transform.position.y, 0.0f);
+                        GeneralController.qtplayer01.transform.position = temp;
+                        break;
+                    }
+                    break;
+                case "Player02":
+                    switch(i)
+                    {
+                        case 0:
+                        temp = new Vector3(GeneralController.qtplayer02.transform.position.x+200, GeneralController.qtplayer02.transform.position.y, 0.0f);
+                        GeneralController.qtplayer02.transform.position = temp;
+                        break;
+                        case 1:
+                        temp = new Vector3(GeneralController.qtplayer02.transform.position.x+400, GeneralController.qtplayer02.transform.position.y, 0.0f);
+                        GeneralController.qtplayer02.transform.position = temp;
+                        break;
+                        case 2:
+                        temp = new Vector3(GeneralController.qtplayer02.transform.position.x-200, GeneralController.qtplayer02.transform.position.y, 0.0f);
+                        GeneralController.qtplayer02.transform.position = temp;
+                        break;
+                        case 3:
+                        //posición inicial
+                        break;
+                    }
+                    break;
+                case "Player03":
+                    switch(i)
+                    {
+                        case 0:
+                        //posición inicial
+                        break;
+                        case 1:
+                        temp = new Vector3(GeneralController.qtplayer03.transform.position.x+200, GeneralController.qtplayer03.transform.position.y, 0.0f);
+                        GeneralController.qtplayer03.transform.position = temp;
+                        break;
+                        case 2:
+                        temp = new Vector3(GeneralController.qtplayer03.transform.position.x-400, GeneralController.qtplayer03.transform.position.y, 0.0f);
+                        GeneralController.qtplayer03.transform.position = temp;
+                        break;
+                        case 3:
+                        temp = new Vector3(GeneralController.qtplayer03.transform.position.x-200, GeneralController.qtplayer03.transform.position.y, 0.0f);
+                        GeneralController.qtplayer03.transform.position = temp;
+                        break;
+                    }
+                    break;
+                case "Player04":
+                    switch(i)
+                    {
+                        case 0:
+                        temp = new Vector3(GeneralController.qtplayer04.transform.position.x-200, GeneralController.qtplayer04.transform.position.y, 0.0f);
+                        GeneralController.qtplayer04.transform.position = temp;
+                        break;
+                        case 1:
+                        //posición inicial
+                        break;
+                        case 2:
+                        temp = new Vector3(GeneralController.qtplayer04.transform.position.x-600, GeneralController.qtplayer04.transform.position.y, 0.0f);
+                        GeneralController.qtplayer04.transform.position = temp;
+                        break;
+                        case 3:
+                        temp = new Vector3(GeneralController.qtplayer04.transform.position.x-400, GeneralController.qtplayer04.transform.position.y, 0.0f);
+                        GeneralController.qtplayer04.transform.position = temp;
+                        break;
+                    }
+                    break;
+            }
+        }
     }
 
 }

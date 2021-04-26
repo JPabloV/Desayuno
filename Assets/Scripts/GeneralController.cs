@@ -526,6 +526,7 @@ public class GeneralController : MonoBehaviour
             target.position = plato04.transform.position;
         }
     }
+    
     private void restablecerImagesPlayers()
     {
         //Interna
